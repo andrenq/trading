@@ -47,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "open",
         "iexBidSize"
 })
-public class Quote {
+public class IEXQuote {
 
     @JsonProperty("symbol")
     private String symbol;
