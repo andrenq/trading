@@ -126,7 +126,7 @@ public class IEXQuote {
     @JsonProperty("open")
     private Double open;
     @JsonProperty("iexBidSize")
-    private Double iexBidSize;
+    private int iexBidSize;
 
     @JsonProperty("symbol")
     public String getSymbol() {
@@ -509,12 +509,12 @@ public class IEXQuote {
     }
 
     @JsonProperty("iexBidSize")
-    public Double getIexBidSize() {
+    public int getIexBidSize() {
         return iexBidSize;
     }
 
     @JsonProperty("iexBidSize")
-    public void setIexBidSize(Double iexBidSize) {
+    public void setIexBidSize(int iexBidSize) {
         this.iexBidSize = iexBidSize;
     }
 

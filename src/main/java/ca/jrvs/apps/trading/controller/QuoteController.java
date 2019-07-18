@@ -4,6 +4,7 @@ import ca.jrvs.apps.trading.dao.MarketDataDao;
 import ca.jrvs.apps.trading.dao.QuoteDao;
 import ca.jrvs.apps.trading.model.domain.IEXQuote;
 import ca.jrvs.apps.trading.model.domain.Quote;
+import ca.jrvs.apps.trading.service.QuoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -24,30 +25,46 @@ public class QuoteController {
     QuoteDao quoteDao;
     @Autowired
     MarketDataDao marketDataDao;
+    @Autowired
+    QuoteService quoteService;
 
     /**
-     * Recieves a coma separated string with tickers
+     * Updates quotes (from IEX API) for all tickers on the database
      *
-     * @param ticker
-     * @return List of IEXQuote objects
+     * @return
      */
-    @GetMapping(path = "/iex/ticker/{ticker}")
-    public List<IEXQuote> getQuote(@PathVariable String ticker) {
+    @ResponseStatus(HttpStatus.OK)
+    @PostMapping(path = "/iexMarketData")
+    public List<Quote> postIEXUpdateQuote() {
         try {
-            return marketDataDao.findIexQuoteByTicker(ticker);
+            return quoteService.postIexUpdateQuote();
         } catch (Exception e) {
-            throw new RuntimeException("Error" + e);
+            throw new RuntimeException("Error " + e);
         }
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(path = "/iex/ticker/{tickers}")
-    public List<Quote> putQuote(@PathVariable String tickers) {
-        List<Quote> quotes = new ArrayList<>();
+    /**
+     * Receives a JSON file and saves as a Quote
+     * @param quote
+     * @return
+     */
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    @PostMapping(path = "/", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
+    public Quote updateQuote(@RequestBody Quote quote) {
         try {
-            List<IEXQuote> tickerList = marketDataDao.findIexQuoteByTicker(tickers);
-            quotes = iEXQuoteToQuote(tickerList);
-            return quoteDao.saveAll(quotes);
+            quote.setCreated_at(new Timestamp(System.currentTimeMillis()));
+            return quoteDao.save(quote);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //Get ticker, update quote on IEX , save to DB
+    @PostMapping(path = "/ticker/{tickers}")
+    public List<Quote> putQuote(@PathVariable String tickers) {
+        try {
+            return quoteService.putQuote(tickers);
         } catch (IOException e) {
             throw new RuntimeException("Error" + e);
         }
@@ -58,45 +75,31 @@ public class QuoteController {
      *
      * @return
      */
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    @GetMapping(path = "/dailyList")
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(path = "/dailylist")
     public List<Quote> getDailyQuote() {
-        List<String> tickers = new ArrayList<>();
-        quoteDao.findAll().stream().forEach(i -> tickers.add(i.getTicker()));
-        List<IEXQuote> tickerList = marketDataDao.findIexQuoteByTicker(tickers);
-        List<Quote> quotes = iEXQuoteToQuote(tickerList);
-        return quoteDao.saveAll(quotes);
+        try {
+            return quoteDao.findAll();
+        } catch (Exception e) {
+            throw new RuntimeException("Error " + e);
+        }
     }
 
     /**
-     * Converts IEXQuotes to Quotes
+     * Recieves a coma separated string with tickers
      *
-     * @param iexQuotes Recives a list of IEXQuote Objects and
-     * @return list of Quote Objects
+     * @param ticker
+     * @return List of IEXQuote objects
      */
-    public List<Quote> iEXQuoteToQuote(List<IEXQuote> iexQuotes) {
-        List<Quote> quotes = new ArrayList<>();
-        for (IEXQuote ticker : iexQuotes
-        ) {
-            quotes.add(new Quote(ticker.getSymbol(),
-                    ticker.getLatestPrice(),
-                    ticker.getIexBidPrice(),
-                    ticker.getIexAskPrice(),
-                    ticker.getIexAskSize()));
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(path = "/iex/ticker/{ticker}")
+    public List<IEXQuote> getQuote(@PathVariable String ticker) {
+        try {
+            return marketDataDao.findIexQuoteByTicker(ticker);
+        } catch (Exception e) {
+            throw new RuntimeException("Error" + e);
         }
-        return quotes;
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
-    @ResponseBody
-    @PostMapping(produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
-    public Quote updateQuote(@RequestBody Quote quote) {
-        try {
-            logger.info(quote.toString());
-            return quoteDao.save(quote);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 
 }

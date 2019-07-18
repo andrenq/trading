@@ -3,6 +3,7 @@ package ca.jrvs.apps.trading.model.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "quote")
@@ -21,24 +22,30 @@ public class Quote {
     private double ask_price;
     @Column(name = "ask_size")
     private double ask_size;
+    @Column(name = "created_at")
+    private Timestamp created_at;
+
+    public Quote(String ticker, double last_price, double bid_price, double bid_size,
+                 double ask_price, double ask_size, Timestamp created_at) {
+        this.ticker = ticker;
+        this.last_price = last_price;
+        this.bid_price = bid_price;
+        this.bid_size = bid_size;
+        this.ask_price = ask_price;
+        this.ask_size = ask_size;
+        this.created_at = created_at;
+
+    }
+
+    public Timestamp getCreated_at() {
+        return created_at;
+    }
 
     public Quote() {
     }
 
-    public Quote(String ticker, double last_price, double bid_price, double ask_price, double ask_size) {
-        this.ticker = ticker;
-        this.last_price = last_price;
-        this.bid_price = bid_price;
-        this.ask_price = ask_price;
-        this.ask_size = ask_size;
-    }
-
-    public double getBid_size() {
-        return bid_size;
-    }
-
-    public void setBid_size(double bid_size) {
-        this.bid_size = bid_size;
+    public void setCreated_at(Timestamp created_at) {
+        this.created_at = created_at;
     }
 
     public String getTicker() {
@@ -63,6 +70,14 @@ public class Quote {
 
     public void setBid_price(double bid_price) {
         this.bid_price = bid_price;
+    }
+
+    public double getBid_size() {
+        return bid_size;
+    }
+
+    public void setBid_size(double bid_size) {
+        this.bid_size = bid_size;
     }
 
     public double getAsk_price() {
