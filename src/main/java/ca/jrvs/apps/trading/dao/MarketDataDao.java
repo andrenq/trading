@@ -11,6 +11,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,21 +19,21 @@ import java.util.List;
 
 @Repository
 public class MarketDataDao {
-
+    //TODO create MarketDaoConfig
+    private final String baseURL = "https://cloud.iexapis.com/stable/stock/market/batch?symbols=%s&types=quote&token=";
+    private final String token = System.getenv("iEXToken");
     private HttpClientConnectionManager poolingConnManager;
+
     @Autowired
     public MarketDataDao(HttpClientConnectionManager httpClientConnectionManager) {
         this.poolingConnManager = poolingConnManager;
     }
 
-    private final String baseURL ="https://cloud.iexapis.com/stable/stock/market/batch?symbols=%s&types=quote&token=";
-    private final String token = System.getenv("iEXToken");
-
-    public List<IEXQuote> findIexQuoteByTicker(List<String> tickers)  {
-        String tickersCombined =String.join(",",tickers);
-        String uri = String.format(baseURL,tickersCombined)+token;
+    public List<IEXQuote> findIexQuoteByTicker(List<String> tickers) {
+        String tickersCombined = String.join(",", tickers);
+        String uri = String.format(baseURL, tickersCombined) + token;
         List<IEXQuote> quotes = new ArrayList<>();
-        try(CloseableHttpClient client = HttpClients.custom().setConnectionManager(poolingConnManager).build();){
+        try (CloseableHttpClient client = HttpClients.custom().setConnectionManager(poolingConnManager).build();) {
             HttpResponse response = client.execute(new HttpGet(uri));
             if (response.getStatusLine().getStatusCode() == 200) {
                 JSONObject iEXQuoteJson = new JSONObject(EntityUtils.toString(response.getEntity()));
@@ -42,16 +43,18 @@ public class MarketDataDao {
                     IEXQuote iexQuote = g.fromJson(quoteStr, IEXQuote.class);
                     quotes.add(iexQuote);
                 });
-            }else throw new RuntimeException("Response error: "+ response.getStatusLine());
-        }catch (IOException ex) {
-                ex.printStackTrace();
-            }
+                //TODO: error handling
+            } else throw new RuntimeException("Response error: " + response.getStatusLine());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
         return quotes;
 
     }
-    public IEXQuote findIexQuoteByTicker(String ticker) throws IOException {
-        return findIexQuoteByTicker(Arrays.asList(ticker)).get(0);
+
+    public List<IEXQuote> findIexQuoteByTicker(String ticker) throws IOException {
+        return findIexQuoteByTicker(Arrays.asList(ticker));
 
     }
 
