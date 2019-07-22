@@ -7,9 +7,10 @@ import javax.persistence.*;
 @Table(name = "security_order")
 public class SecurityOrder {
     @Id
+    @GeneratedValue
     @Basic(optional = false)
-    @Column(name = "id", unique = true, nullable = false)
-    private double securityOrderId;
+    @Column(name = "id", updatable = false, unique = true, nullable = false)
+    private int securityOrderId;
     @Column(name = "account_id")
     private double account_id;
     @Column(name = "status")
@@ -23,11 +24,23 @@ public class SecurityOrder {
     @Column(name = "notes")
     private String notes;
 
+    public SecurityOrder() {
+    }
+
+    public SecurityOrder(double account_id, String status, String ticker, int size, double price, String notes) {
+        this.account_id = account_id;
+        this.status = status;
+        this.ticker = ticker;
+        this.size = size;
+        this.price = price;
+        this.notes = notes;
+    }
+
     public double getSecurityOrderId() {
         return securityOrderId;
     }
 
-    public void setSecurityOrderId(double securityOrderId) {
+    public void setSecurityOrderId(int securityOrderId) {
         this.securityOrderId = securityOrderId;
     }
 

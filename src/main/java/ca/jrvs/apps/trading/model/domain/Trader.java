@@ -9,9 +9,9 @@ import java.util.Date;
 public class Trader {
 
     @Id
-    @Basic(optional = false)
-    @Column(name = "id", unique = true, nullable = false)
-    private double traderID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
+    private int id;
     @Column(name = "first_name")
     private String first_name;
     @Column(name = "last_name")
@@ -23,12 +23,48 @@ public class Trader {
     @Column(name = "email")
     private String email;
 
-    public double getTraderID() {
-        return traderID;
+//    @OneToMany(mappedBy="trader_id")
+//    List<Account> accList=new ArrayList<>();
+
+    public Trader() {
     }
 
-    public void setTraderID(double traderID) {
-        this.traderID = traderID;
+    public Trader(String first_name, String last_name, Date dob, String country, String email) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.dob = dob;
+        this.country = country;
+        this.email = email;
+    }
+
+
+//    public List<Account> getAccount() {
+//        return accList;
+//    }
+//
+//    public void setAccList(List<Account> accList) {
+//        this.accList = accList;
+//    }
+
+
+    @Override
+    public String toString() {
+        return "Trader{" + "\n" +
+                "id=" + id + "\n" +
+                ", first_name='" + first_name + '\'' + "\n" +
+                ", last_name='" + last_name + '\'' + "\n" +
+                ", dob=" + dob + "\n" +
+                ", country='" + country + '\'' + "\n" +
+                ", email='" + email + '\'' + "\n" +
+                '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirst_name() {
