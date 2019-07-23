@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/health")
 public class AppController {
 
-    @GetMapping(path = "/")
+    @GetMapping
     public String appController() {
         return "I'm alive!";
     }
