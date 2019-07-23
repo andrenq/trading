@@ -18,6 +18,15 @@ public class Account {
     //Trader trader;
 
 
+    @Override
+    public String toString() {
+        return "Account{" + "\n" +
+                "accountID=" + accountID + "\n" +
+                ", traderId=" + traderId + "\n" +
+                ", amount=" + amount + "\n" +
+                '}';
+    }
+
     public Account() {
     }
 

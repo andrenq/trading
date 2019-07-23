@@ -2,7 +2,9 @@ package ca.jrvs.apps.trading.model.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "trader")
@@ -23,8 +25,7 @@ public class Trader {
     @Column(name = "email")
     private String email;
 
-//    @OneToMany(mappedBy="trader_id")
-//    List<Account> accList=new ArrayList<>();
+
 
     public Trader() {
     }
@@ -37,25 +38,25 @@ public class Trader {
         this.email = email;
     }
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "trader_id")
+    List<Account> accList = new ArrayList<>();
 
-//    public List<Account> getAccount() {
-//        return accList;
-//    }
-//
-//    public void setAccList(List<Account> accList) {
-//        this.accList = accList;
-//    }
+    public List<Account> getAccount() {
+        return accList;
+    }
 
 
     @Override
     public String toString() {
-        return "Trader{" + "\n" +
-                "id=" + id + "\n" +
+        return "Trader{" +
+                "id=" + id +
                 ", first_name='" + first_name + '\'' + "\n" +
                 ", last_name='" + last_name + '\'' + "\n" +
                 ", dob=" + dob + "\n" +
                 ", country='" + country + '\'' + "\n" +
                 ", email='" + email + '\'' + "\n" +
+                ", accList=" + accList + "\n" +
                 '}';
     }
 

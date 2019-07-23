@@ -2,16 +2,16 @@ package ca.jrvs.apps.trading.service;
 
 import ca.jrvs.apps.trading.dao.AccountDao;
 import ca.jrvs.apps.trading.dao.TraderDao;
+import ca.jrvs.apps.trading.model.domain.Trader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-@RestController
-@RequestMapping("/portfolio")
+
+@Transactional
+@Service
 public class DashboardService {
     private static final Logger logger = LoggerFactory.getLogger(DashboardService.class);
     private TraderDao traderDao;
@@ -23,12 +23,10 @@ public class DashboardService {
         this.traderDao = traderDao;
     }
 
-    @GetMapping(path = "/traderId/{traderId}")
-    public String traderAccountsDetails(@PathVariable int traderId) {
+
+    public Trader traderAccountsDetails(int traderId) {
         String response = "";
-        response = traderDao.findByid(traderId).toString();
-        response += accountDao.findAllBytraderId(traderId).toString();
-        return response;
+        return traderDao.findByid(traderId);
     }
 
 }

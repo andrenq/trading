@@ -43,7 +43,6 @@ public class RegisterService {
         Trader newTrader = traderDao.save(trader);
         logger.info("Value of the trader Id: " + newTrader.getId());
         createAccount(newTrader);
-        createAccount(newTrader);
         return newTrader;
     }
 
