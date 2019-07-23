@@ -19,6 +19,7 @@ import java.util.List;
 @Transactional
 @Service
 public class QuoteService {
+
     private static final Logger logger = LoggerFactory.getLogger(QuoteController.class);
     MarketDataDao marketDataDao;
     private QuoteDao quoteDao;

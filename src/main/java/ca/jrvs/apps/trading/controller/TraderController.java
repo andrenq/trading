@@ -1,8 +1,8 @@
 package ca.jrvs.apps.trading.controller;
 
-import ca.jrvs.apps.trading.dao.AccountDao;
-import ca.jrvs.apps.trading.dao.TraderDao;
+import ca.jrvs.apps.trading.model.domain.Account;
 import ca.jrvs.apps.trading.model.domain.Trader;
+import ca.jrvs.apps.trading.service.FundTransferService;
 import ca.jrvs.apps.trading.service.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,9 +19,7 @@ public class TraderController {
     @Autowired
     RegisterService registerService;
     @Autowired
-    TraderDao traderDao;
-    @Autowired
-    AccountDao accountDao;
+    FundTransferService fundTransferService;
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/save")
@@ -43,7 +41,7 @@ public class TraderController {
         }
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
     @PostMapping(path = "/firstname/{firstname}/lastname/{lastname}/dob/{dob}/country/{country}/email/{email}")
     public Trader createTrader(@PathVariable String firstname, @PathVariable String lastname,
@@ -57,6 +55,28 @@ public class TraderController {
             trader.setCountry(country);
             trader.setEmail(email);
             return registerService.createTrader(trader);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseBody
+    @PutMapping(path = "/deposit/accountId/{accountId}/amount/{amount}")
+    public Account depositFunds(@PathVariable int accountId, @PathVariable double amount) {
+        try {
+            return fundTransferService.depositFunds(accountId, amount);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseBody
+    @PutMapping(path = "/withdraw/accountId/{accountId}/amount/{amount}")
+    public Account withdrawFunds(@PathVariable int accountId, @PathVariable double amount) {
+        try {
+            return fundTransferService.withdrawFunds(accountId, amount);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

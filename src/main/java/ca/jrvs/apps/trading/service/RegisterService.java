@@ -38,7 +38,6 @@ public class RegisterService {
                     "  \"id\": 0,\n" +
                     "  \"lastName\": \"string\"\n" +
                     "}");
-
         }
         Trader newTrader = traderDao.save(trader);
         logger.info("Value of the trader Id: " + newTrader.getId());

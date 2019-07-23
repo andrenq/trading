@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @Service
 public class DashboardService {
+
     private static final Logger logger = LoggerFactory.getLogger(DashboardService.class);
     private TraderDao traderDao;
     private AccountDao accountDao;
