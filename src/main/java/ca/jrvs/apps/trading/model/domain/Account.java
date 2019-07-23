@@ -2,6 +2,8 @@ package ca.jrvs.apps.trading.model.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "account")
@@ -17,6 +19,17 @@ public class Account {
 
     //Trader trader;
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "account_id")
+    List<Position> positionList = new ArrayList<>();
+
+    public List<Position> getsecurityOrder() {
+        return positionList;
+    }
+
+    public void setsecurityOrderList(List<Position> positionList) {
+        this.positionList = positionList;
+    }
 
     @Override
     public String toString() {

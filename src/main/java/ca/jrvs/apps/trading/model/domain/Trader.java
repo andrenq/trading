@@ -46,6 +46,9 @@ public class Trader {
         return accList;
     }
 
+    public void setAccList(List<Account> accList) {
+        this.accList = accList;
+    }
 
     @Override
     public String toString() {

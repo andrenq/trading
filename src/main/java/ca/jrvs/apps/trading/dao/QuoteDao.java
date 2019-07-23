@@ -9,4 +9,6 @@ import java.util.Optional;
 @Repository
 public interface QuoteDao extends JpaRepository<Quote, String> {
     Optional<Quote> findById(String ticker);
+
+    Quote findByTicker(String tikcer);
 }

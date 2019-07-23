@@ -53,12 +53,6 @@
 		</dependency>
 
 		<!--Tests-->
-		<!-- https://mvnrepository.com/artifact/org.kopitubruk.util/JSONUtil -->
-		<dependency>
-			<groupId>org.kopitubruk.util</groupId>
-			<artifactId>JSONUtil</artifactId>
-			<version>1.8</version>
-		</dependency>
 
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
@@ -82,6 +76,13 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.10.Final-patched-play-1.5.0</version>
 		</dependency>
+        <!-- Spring boot Test dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <version>2.1.6.RELEASE</version>
+        </dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2-mvstore</artifactId>
