@@ -4,6 +4,7 @@ import ca.jrvs.apps.trading.dao.AccountDao;
 import ca.jrvs.apps.trading.dao.TraderDao;
 import ca.jrvs.apps.trading.model.domain.Account;
 import ca.jrvs.apps.trading.model.domain.Trader;
+import ca.jrvs.apps.trading.model.dto.TraderDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,25 +24,24 @@ public class RegisterService {
         this.traderDao = traderDao;
     }
 
-    public Trader createTrader(Trader trader) {
-        logger.info(trader.toString());
-        if (trader.getCountry().isEmpty() |
-                trader.getDob().toString().isEmpty() |
-                trader.getEmail().isEmpty() |
-                trader.getFirst_name().isEmpty() |
-                trader.getLast_name().isEmpty()) {
-            throw new RuntimeException("To create a new Trader you have to input all necessary data:{\n" +
-                    "  \"country\": \"string\",\n" +
-                    "  \"dob\": \"2019-07-22T14:38:01.444Z\",\n" +
-                    "  \"email\": \"string\",\n" +
-                    "  \"firstName\": \"string\",\n" +
-                    "  \"id\": 0,\n" +
-                    "  \"lastName\": \"string\"\n" +
-                    "}");
+    public Trader createTrader(TraderDto traderDto) {
+        logger.info(traderDto.toString());
+        if (traderDto.getCountry().isEmpty() |
+                traderDto.getDob().toString().isEmpty() |
+                traderDto.getEmail().isEmpty() |
+                traderDto.getFirst_name().isEmpty() |
+                traderDto.getLast_name().isEmpty()) {
+            throw new RuntimeException("To create a new Trader you have to input all necessary data");
         }
-        Trader newTrader = traderDao.save(trader);
+
+        Trader newTrader = new Trader();
+        newTrader.setCountry(traderDto.getCountry());
+        newTrader.setDob(traderDto.getDob());
+        newTrader.setEmail(traderDto.getEmail());
+        newTrader.setFirst_name(traderDto.getFirst_name());
+        newTrader.setLast_name(traderDto.getLast_name());
         logger.info("Value of the trader Id: " + newTrader.getId());
-        createAccount(newTrader);
+        createAccount(traderDao.save(newTrader));
         return newTrader;
     }
 

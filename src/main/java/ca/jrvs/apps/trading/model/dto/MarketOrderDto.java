@@ -1,51 +1,37 @@
 package ca.jrvs.apps.trading.model.dto;
 
-import ca.jrvs.apps.trading.model.domain.Account;
-import ca.jrvs.apps.trading.model.domain.Quote;
-import ca.jrvs.apps.trading.model.domain.SecurityOrder;
-
 public class MarketOrderDto {
-    private Account account;
-    private SecurityOrder securityOrder;
-    private Quote quote;
-    private double totalCost;
+    private int accountId;
+    private int size;
+    private String ticker;
 
-    public MarketOrderDto(Account account, SecurityOrder securityOrder, Quote quote, double totalCost) {
-        this.account = account;
-        this.securityOrder = securityOrder;
-        this.quote = quote;
-        this.totalCost = totalCost;
+    public MarketOrderDto(int accountId, int size, String ticker) {
+        this.accountId = accountId;
+        this.size = size;
+        this.ticker = ticker;
     }
 
-    public Account getAccount() {
-        return account;
+    public int getAccountId() {
+        return accountId;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
     }
 
-    public SecurityOrder getSecurityOrder() {
-        return securityOrder;
+    public int getSize() {
+        return size;
     }
 
-    public void setSecurityOrder(SecurityOrder securityOrder) {
-        this.securityOrder = securityOrder;
+    public void setSize(int size) {
+        this.size = size;
     }
 
-    public Quote getQuote() {
-        return quote;
+    public String getTicker() {
+        return ticker;
     }
 
-    public void setQuote(Quote quote) {
-        this.quote = quote;
-    }
-
-    public double getTotalCost() {
-        return totalCost;
-    }
-
-    public void setTotalCost(double totalCost) {
-        this.totalCost = totalCost;
+    public void setTicker(String ticker) {
+        this.ticker = ticker;
     }
 }

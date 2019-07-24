@@ -2,18 +2,23 @@ package ca.jrvs.apps.trading.controller;
 
 import ca.jrvs.apps.trading.model.domain.Account;
 import ca.jrvs.apps.trading.model.domain.Trader;
+import ca.jrvs.apps.trading.model.dto.TraderDto;
 import ca.jrvs.apps.trading.service.FundTransferService;
 import ca.jrvs.apps.trading.service.RegisterService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.sql.Date;
 
 
 @RestController
 @RequestMapping("/trader")
+@Api(value = "Trader management")
 public class TraderController {
 
     @Autowired
@@ -22,18 +27,10 @@ public class TraderController {
     FundTransferService fundTransferService;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(path = "/save")
-    public Trader createTrader() {
-        Trader trader = new Trader("Andre", "Queiroz", Date.valueOf("1983-04-29"), "Canada", "andre@gmail.com");
-        Trader newTrader = registerService.createTrader(trader);
-        registerService.deleteTrader(newTrader);
-        return newTrader;
-    }
-
-    @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
     @PostMapping(path = "/", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
-    public Trader createTraderJson(@RequestBody Trader trader) {
+    public Trader createTraderJson(@ApiParam(value = "Trader object", required = true) @Valid @RequestBody TraderDto trader) {
+//            @RequestBody Trader trader) {
         try {
             return registerService.createTrader(trader);
         } catch (Exception e) {
@@ -47,7 +44,7 @@ public class TraderController {
     public Trader createTrader(@PathVariable String firstname, @PathVariable String lastname,
                                @PathVariable String dob, @PathVariable String country,
                                @PathVariable String email) {
-        Trader trader = new Trader();
+        TraderDto trader = new TraderDto();
         try {
             trader.setFirst_name(firstname);
             trader.setLast_name(lastname);

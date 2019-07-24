@@ -1,6 +1,7 @@
 package ca.jrvs.apps.trading.service;
 
 import ca.jrvs.apps.trading.dao.AccountDao;
+import ca.jrvs.apps.trading.dao.PositionDao;
 import ca.jrvs.apps.trading.dao.TraderDao;
 import ca.jrvs.apps.trading.model.domain.Trader;
 import org.slf4j.Logger;
@@ -17,16 +18,17 @@ public class DashboardService {
     private static final Logger logger = LoggerFactory.getLogger(DashboardService.class);
     private TraderDao traderDao;
     private AccountDao accountDao;
+    private PositionDao positionDao;
 
     @Autowired
-    public DashboardService(TraderDao traderDao, AccountDao accountDao) {
-        this.accountDao = accountDao;
+    public DashboardService(TraderDao traderDao, AccountDao accountDao, PositionDao positionDao) {
         this.traderDao = traderDao;
+        this.accountDao = accountDao;
+        this.positionDao = positionDao;
     }
 
 
     public Trader traderAccountsDetails(int traderId) {
-        String response = "";
         return traderDao.findByid(traderId);
     }
 

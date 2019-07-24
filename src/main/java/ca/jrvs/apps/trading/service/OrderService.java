@@ -8,6 +8,7 @@ import ca.jrvs.apps.trading.model.domain.OrderStatus;
 import ca.jrvs.apps.trading.model.domain.Quote;
 import ca.jrvs.apps.trading.model.domain.SecurityOrder;
 import ca.jrvs.apps.trading.model.dto.MarketOrderDto;
+import ca.jrvs.apps.trading.model.dto.OrderDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,18 +30,22 @@ public class OrderService {
         this.fundTransferService = fundTransferService;
     }
 
-    public MarketOrderDto createMarketOrderDTO(SecurityOrder securityOrder) {
+    public OrderDto createMarketOrderDTO(MarketOrderDto marketOrderDto) {
+        SecurityOrder securityOrder = new SecurityOrder();
+        securityOrder.setTicker(marketOrderDto.getTicker());
+        securityOrder.setAccount_id(marketOrderDto.getAccountId());
+        securityOrder.setSize(marketOrderDto.getSize());
         securityOrder.setStatus(OrderStatus.PENDING);
         securityOrder.setTicker(securityOrder.getTicker().toUpperCase());
         Quote quote = quoteDao.findByTicker(securityOrder.getTicker());
         Account account = accountDao.findByAccountID(securityOrder.getAccount_id());
         double totalCost = securityOrder.getSize() * quote.getAsk_price();
-        MarketOrderDto m = new MarketOrderDto(account, securityOrder, quote, totalCost);
+        OrderDto m = new OrderDto(account, securityOrder, quote, totalCost);
         securityOrderDao.save(securityOrder);
         return m;
     }
 
-    public MarketOrderDto checkSecurityOrder(MarketOrderDto m) {
+    public OrderDto checkSecurityOrder(OrderDto m) {
         try {
             if ((m.getAccount().getAmount() < m.getTotalCost()) ||
                     (!m.getSecurityOrder().getTicker().equalsIgnoreCase(m.getQuote().getTicker()) ||
@@ -57,7 +62,7 @@ public class OrderService {
         return m;
     }
 
-    public SecurityOrder executeSecurityOrder(MarketOrderDto m) {
+    public SecurityOrder executeSecurityOrder(OrderDto m) {
         if (m.getSecurityOrder().getStatus().equals(OrderStatus.PENDING)) {
             fundTransferService.withdrawFunds(m.getAccount().getAccountID(), m.getTotalCost());
             m.getSecurityOrder().setStatus(OrderStatus.FILLED);

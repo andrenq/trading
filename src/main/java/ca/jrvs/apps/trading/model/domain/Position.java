@@ -5,13 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "position")
 public class Position {
+
     @Id
+    @Column(name = "row_id")
+    private int rowID;
     @Column(name = "account_id")
-    private double accountID;
+    private int accountID;
     @Column(name = "ticker")
     private String ticker;
     @Column(name = "position")
@@ -20,17 +22,11 @@ public class Position {
     public Position() {
     }
 
-    public Position(double accountID, String ticker, int position) {
-        this.accountID = accountID;
-        this.ticker = ticker;
-        this.position = position;
-    }
-
     public double getAccountID() {
         return accountID;
     }
 
-    public void setAccountID(double accountID) {
+    public void setAccountID(int accountID) {
         this.accountID = accountID;
     }
 
