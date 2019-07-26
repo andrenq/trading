@@ -10,14 +10,14 @@ import java.util.List;
 @Table(name = "trader")
 public class Trader {
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "trader_id")
+    @OneToMany
+    @JoinColumn(name = "trader_id", updatable = false)
     @OrderBy("id")
     List<Account> accList = new ArrayList<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
+    @Column(name = "id", nullable = false)
     private int id;
     @Column(name = "first_name")
     private String first_name;

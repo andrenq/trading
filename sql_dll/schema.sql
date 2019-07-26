@@ -65,7 +65,7 @@ AS
              ORDER BY subquery.ticker) AS row_id
   FROM  (SELECT security_order.account_id,
                 security_order.ticker,
-                SUM(security_order.SIZE) AS "position"
+                SUM(security_order.SIZE) AS position
          FROM   security_order
          WHERE  security_order.status :: NUMERIC = 1
          GROUP  BY security_order.account_id,

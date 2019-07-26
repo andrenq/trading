@@ -83,17 +83,16 @@
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate -->
 		<dependency>
-			<groupId>com.google.code.maven-play-plugin.org.hibernate</groupId>
+			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.2.10.Final-patched-play-1.5.0</version>
 		</dependency>
-        <!-- Spring boot Test dependencies -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <version>2.1.6.RELEASE</version>
-        </dependency>
+		<!-- Spring boot Test dependencies -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<version>2.1.6.RELEASE</version>
+		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2-mvstore</artifactId>
