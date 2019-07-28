@@ -33,12 +33,12 @@ public class OrderService {
     public OrderDto createMarketOrderDTO(MarketOrderDto marketOrderDto) {
         SecurityOrder securityOrder = new SecurityOrder();
         securityOrder.setTicker(marketOrderDto.getTicker());
-        securityOrder.setAccount_id(marketOrderDto.getAccountId());
+        securityOrder.setAccountID(marketOrderDto.getAccountId());
         securityOrder.setSize(marketOrderDto.getSize());
         securityOrder.setStatus(OrderStatus.PENDING);
         securityOrder.setTicker(securityOrder.getTicker().toUpperCase());
         Quote quote = quoteDao.findByTicker(securityOrder.getTicker());
-        Account account = accountDao.findByAccountID(securityOrder.getAccount_id());
+        Account account = accountDao.findByAccountID(securityOrder.getAccountID());
         double totalCost = securityOrder.getSize() * quote.getAsk_price();
         OrderDto m = new OrderDto(account, securityOrder, quote, totalCost);
         securityOrderDao.save(securityOrder);

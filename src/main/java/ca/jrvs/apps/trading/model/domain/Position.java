@@ -12,7 +12,7 @@ public class Position {
     @Id
     @Column(name = "row_id")
     private int rowID;
-    @Column(name = "account_id")
+    @Column(name = "account_id", nullable = false)
     private int accountID;
     @Column(name = "ticker")
     private String ticker;

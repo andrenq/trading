@@ -9,10 +9,10 @@ public class SecurityOrder {
     @Id
     @GeneratedValue
     @Basic(optional = false)
-    @Column(name = "id", updatable = false, unique = true, nullable = false)
+    @Column(name = "id", nullable = false)
     private int securityOrderId;
     @Column(name = "account_id")
-    private int account_id;
+    private int accountID;
     @Column(name = "status")
     private OrderStatus status;
     @Column(name = "ticker")
@@ -27,14 +27,14 @@ public class SecurityOrder {
     public SecurityOrder() {
     }
 
-    public SecurityOrder(int account_id, String ticker, int size) {
-        this.account_id = account_id;
+    public SecurityOrder(int accountID, String ticker, int size) {
+        this.accountID = accountID;
         this.ticker = ticker;
         this.size = size;
     }
 
-    public SecurityOrder(int account_id, OrderStatus status, String ticker, int size, double price, String notes) {
-        this.account_id = account_id;
+    public SecurityOrder(int accountID, OrderStatus status, String ticker, int size, double price, String notes) {
+        this.accountID = accountID;
         this.status = status;
         this.ticker = ticker;
         this.size = size;
@@ -50,12 +50,12 @@ public class SecurityOrder {
         this.securityOrderId = securityOrderId;
     }
 
-    public int getAccount_id() {
-        return account_id;
+    public int getAccountID() {
+        return accountID;
     }
 
-    public void setAccount_id(int account_id) {
-        this.account_id = account_id;
+    public void setAccountID(int accountID) {
+        this.accountID = accountID;
     }
 
     public OrderStatus getStatus() {

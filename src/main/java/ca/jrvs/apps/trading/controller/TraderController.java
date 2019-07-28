@@ -11,9 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 import java.sql.Date;
+import java.util.MissingFormatArgumentException;
 
 
 @RestController
@@ -33,8 +35,9 @@ public class TraderController {
 //            @RequestBody Trader trader) {
         try {
             return registerService.createTrader(trader);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        } catch (MissingFormatArgumentException e) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
 
@@ -53,7 +56,23 @@ public class TraderController {
             trader.setEmail(email);
             return registerService.createTrader(trader);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, e.getMessage());
+        }
+    }
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseBody
+    @DeleteMapping(path = "/delete/traderid/{traderid}")
+    public void deleteTrader(@PathVariable int traderid) {
+        try {
+            //registerService.delete(traderid);
+//            registerService.deleteSecurityOrder(traderid);
+//            registerService.deleteAccount2(traderid);
+            registerService.deleteTrader(traderid);
+        } catch (Exception e) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
 
@@ -64,7 +83,8 @@ public class TraderController {
         try {
             return fundTransferService.depositFunds(accountId, amount);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
 
@@ -75,8 +95,10 @@ public class TraderController {
         try {
             return fundTransferService.withdrawFunds(accountId, amount);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
+
 
 }

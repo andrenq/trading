@@ -8,13 +8,14 @@ import java.util.List;
 @Entity
 @Table(name = "account")
 public class Account {
+
     @OneToMany
-    @JoinColumn(name = "account_id")
+    @JoinColumn(name = "account_id", updatable = false)
     List<Position> positionList = new ArrayList<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", updatable = false, nullable = false)
+    @Column(name = "id", nullable = false)
     private int accountID;
     @Column(name = "trader_id")
     private int traderId;
