@@ -15,7 +15,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 import java.sql.Date;
-import java.util.MissingFormatArgumentException;
 
 
 @RestController
@@ -35,9 +34,8 @@ public class TraderController {
 //            @RequestBody Trader trader) {
         try {
             return registerService.createTrader(trader);
-        } catch (MissingFormatArgumentException e) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, e.getMessage());
+        } catch (Exception e) {
+            throw e;
         }
     }
 
@@ -66,13 +64,9 @@ public class TraderController {
     @DeleteMapping(path = "/delete/traderid/{traderid}")
     public void deleteTrader(@PathVariable int traderid) {
         try {
-            //registerService.delete(traderid);
-//            registerService.deleteSecurityOrder(traderid);
-//            registerService.deleteAccount2(traderid);
             registerService.deleteTrader(traderid);
         } catch (Exception e) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, e.getMessage());
+            throw e;
         }
     }
 
@@ -83,8 +77,7 @@ public class TraderController {
         try {
             return fundTransferService.depositFunds(accountId, amount);
         } catch (Exception e) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, e.getMessage());
+            throw e;
         }
     }
 
@@ -95,8 +88,7 @@ public class TraderController {
         try {
             return fundTransferService.withdrawFunds(accountId, amount);
         } catch (Exception e) {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, e.getMessage());
+            throw e;
         }
     }
 
