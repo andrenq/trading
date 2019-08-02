@@ -45,4 +45,10 @@ public class Position {
     public void setPosition(int position) {
         this.position = position;
     }
+
+    public Position(int accountID, String ticker, int position) {
+        this.accountID = accountID;
+        this.ticker = ticker;
+        this.position = position;
+    }
 }

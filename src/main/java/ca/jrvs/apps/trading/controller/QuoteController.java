@@ -39,7 +39,7 @@ public class QuoteController {
         try {
             return quoteService.postIexUpdateQuote();
         } catch (Exception e) {
-            throw new RuntimeException("Error " + e);
+            throw e;
         }
     }
 
@@ -56,7 +56,7 @@ public class QuoteController {
             quote.setCreated_at(new Timestamp(System.currentTimeMillis()));
             return quoteDao.save(quote);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw e;
         }
     }
 
@@ -97,7 +97,7 @@ public class QuoteController {
         try {
             return marketDataDao.findIexQuoteByTicker(ticker);
         } catch (Exception e) {
-            throw new RuntimeException("Error" + e);
+            throw e;
         }
     }
 

@@ -10,7 +10,9 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,7 +35,7 @@ public class MarketDataDao {
         String tickersCombined = String.join(",", tickers);
         String uri = String.format(baseURL, tickersCombined) + token;
         List<IEXQuote> quotes = new ArrayList<>();
-        try (CloseableHttpClient client = HttpClients.custom().setConnectionManager(poolingConnManager).build();) {
+        try (CloseableHttpClient client = HttpClients.custom().setConnectionManager(poolingConnManager).build()) {
             HttpResponse response = client.execute(new HttpGet(uri));
             if (response.getStatusLine().getStatusCode() == 200) {
                 JSONObject iEXQuoteJson = new JSONObject(EntityUtils.toString(response.getEntity()));
@@ -43,8 +45,10 @@ public class MarketDataDao {
                     IEXQuote iexQuote = g.fromJson(quoteStr, IEXQuote.class);
                     quotes.add(iexQuote);
                 });
-                //TODO: error handling
-            } else throw new RuntimeException("Response error: " + response.getStatusLine());
+            } else {
+                throw new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, response.getStatusLine().toString());
+            }
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -53,9 +57,14 @@ public class MarketDataDao {
 
     }
 
-    public List<IEXQuote> findIexQuoteByTicker(String ticker) throws IOException {
-        return findIexQuoteByTicker(Arrays.asList(ticker));
+    public List<IEXQuote> findIexQuoteByTicker(String ticker) {
+        try {
+            return findIexQuoteByTicker(Arrays.asList(ticker));
+        } catch (Exception e) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, e.getMessage());
 
+        }
     }
 
 }

@@ -14,25 +14,26 @@ public class FundTransferService {
     @Autowired
     AccountDao accountDao;
 
-    public Account depositFunds(int accountId, double amount) {
-        if (amount < 0) {
+    private void checkInfo(int accountId, double amount) {
+        if ((Double.valueOf(amount) < 0)) {
             throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, "Amount for deposit mus be positive.");
+                    HttpStatus.BAD_REQUEST, "Amount for withdraw must be positive, and type Double");
         }
         if (accountDao.findByAccountID(accountId) == null) {
             throw new ResponseStatusException(
                     HttpStatus.NOT_FOUND, "Account ID was not found");
         }
+    }
+
+    public Account depositFunds(int accountId, double amount) {
+        checkInfo(accountId, amount);
         Account account = accountDao.findByAccountID(accountId);
         account.setAmount(account.getAmount() + amount);
         return accountDao.save(account);
     }
 
     public Account withdrawFunds(int accountId, double amount) {
-        if (amount < 0) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, "Amount for withdraw mus be positive.");
-        }
+        checkInfo(accountId, amount);
         Account account = accountDao.findByAccountID(accountId);
         if (account.getAmount() >= amount) {
             account.setAmount(account.getAmount() - amount);
