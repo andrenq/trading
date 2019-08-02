@@ -10,6 +10,10 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class TradingApplication {
 
+    public static void main(String[] args) {
+        SpringApplication.run(TradingApplication.class, args);
+    }
+
     @Bean
     public MarketDataDao marketDataDao(HttpClientConnectionManager httpClientConnectionManager) {
         return new MarketDataDao(httpClientConnectionManager);
@@ -19,9 +23,5 @@ public class TradingApplication {
     HttpClientConnectionManager httpClientConnectionManager() {
         return new PoolingHttpClientConnectionManager();
     }
-
-	public static void main(String[] args) {
-		SpringApplication.run(TradingApplication.class, args);
-	}
 
 }

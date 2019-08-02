@@ -31,7 +31,6 @@ public class TraderController {
     @ResponseBody
     @PostMapping(path = "/", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
     public Trader createTraderJson(@ApiParam(value = "Trader object", required = true) @Valid @RequestBody TraderDto trader) {
-//            @RequestBody Trader trader) {
         try {
             return registerService.createTrader(trader);
         } catch (Exception e) {
@@ -53,10 +52,13 @@ public class TraderController {
             trader.setCountry(country);
             trader.setEmail(email);
             return registerService.createTrader(trader);
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, e.getMessage());
+                    HttpStatus.BAD_REQUEST, e.getMessage());
+        } catch (ResponseStatusException e) {
+            throw e;
         }
+
     }
 
     @ResponseStatus(HttpStatus.ACCEPTED)
@@ -65,7 +67,7 @@ public class TraderController {
     public void deleteTrader(@PathVariable int traderid) {
         try {
             registerService.deleteTrader(traderid);
-        } catch (Exception e) {
+        } catch (ResponseStatusException e) {
             throw e;
         }
     }

@@ -22,8 +22,8 @@ import java.util.List;
 @Repository
 public class MarketDataDao {
     //TODO create MarketDaoConfig
-    private final String baseURL = "https://cloud.iexapis.com/stable/stock/market/batch?symbols=%s&types=quote&token=";
-    private final String token = System.getenv("iEXToken");
+    private final String BASE_URL = "https://cloud.iexapis.com/stable/stock/market/batch?symbols=%s&types=quote&token=";
+    private final String IEX_TOKEN = System.getenv("IEX_TOKEN");
     private HttpClientConnectionManager poolingConnManager;
 
     @Autowired
@@ -33,7 +33,7 @@ public class MarketDataDao {
 
     public List<IEXQuote> findIexQuoteByTicker(List<String> tickers) {
         String tickersCombined = String.join(",", tickers);
-        String uri = String.format(baseURL, tickersCombined) + token;
+        String uri = String.format(BASE_URL, tickersCombined) + IEX_TOKEN;
         List<IEXQuote> quotes = new ArrayList<>();
         try (CloseableHttpClient client = HttpClients.custom().setConnectionManager(poolingConnManager).build()) {
             HttpResponse response = client.execute(new HttpGet(uri));
@@ -54,7 +54,6 @@ public class MarketDataDao {
         }
 
         return quotes;
-
     }
 
     public List<IEXQuote> findIexQuoteByTicker(String ticker) {

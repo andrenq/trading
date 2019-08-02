@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface PositionDao extends JpaRepository<Position, Integer> {
     List<Position> findAllByaccountID(int accountID);
+
     Position findPositionByAccountIDAndTicker(int accountID, String ticker);
 }

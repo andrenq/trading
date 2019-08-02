@@ -1,4 +1,3 @@
-
 package ca.jrvs.apps.trading.model.domain;
 
 import javax.persistence.Entity;
@@ -37,11 +36,11 @@ public class Quote {
 
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Quote() {
     }
 
-    public Quote() {
+    public Timestamp getCreated_at() {
+        return created_at;
     }
 
     public void setCreated_at(Timestamp created_at) {

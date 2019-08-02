@@ -14,6 +14,7 @@ public interface AccountDao extends JpaRepository<Account, Integer> {
     void delete(int traderID);
 
     void deleteByaccountID(int accountID);
+
     Account findByAccountID(int id);
 
     void deleteAllBytraderId(int traderID);

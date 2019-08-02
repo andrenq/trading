@@ -32,14 +32,17 @@ public class RegisterService {
         this.securityOrderDao = securityOrderDao;
     }
 
+    /**
+     * CREATE
+     */
     public Trader createTrader(TraderDto traderDto) {
         logger.info(traderDto.toString());
         Trader newTrader = new Trader();
         try {
-            if (!(traderDto.getCountry().isEmpty() |
-                    traderDto.getDob().toString().isEmpty() |
-                    traderDto.getEmail().isEmpty() |
-                    traderDto.getFirst_name().isEmpty() |
+            if (!(traderDto.getCountry().isEmpty() &&
+                    traderDto.getDob().toString().isEmpty() &&
+                    traderDto.getEmail().isEmpty() &&
+                    traderDto.getFirst_name().isEmpty() &&
                     traderDto.getLast_name().isEmpty())) {
                 newTrader.setCountry(String.valueOf(traderDto.getCountry()));
                 newTrader.setDob(Date.valueOf(String.valueOf(traderDto.getDob())));
@@ -47,6 +50,8 @@ public class RegisterService {
                 newTrader.setFirst_name(String.valueOf(traderDto.getFirst_name()));
                 newTrader.setLast_name(String.valueOf(traderDto.getLast_name()));
                 logger.info("Value of the trader Id: " + newTrader.getId());
+            } else {
+                throw new RuntimeException();
             }
         } catch (Exception e) {
             throw new ResponseStatusException(
@@ -79,9 +84,9 @@ public class RegisterService {
         }
         deleteSecurityOrder(traderid);
         deleteAccount(traderid);
-        //trader.getAccount().clear();
         traderDao.delete(trader);
     }
+
 
     public void deleteSecurityOrder(int traderID) {
         Trader trader = traderDao.findByid(traderID);

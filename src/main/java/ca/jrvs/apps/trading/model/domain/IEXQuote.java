@@ -1,4 +1,3 @@
-
 package ca.jrvs.apps.trading.model.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
