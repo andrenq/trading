@@ -1,7 +1,7 @@
 
 
 
-# Environmental variables 
+## Environmental variables 
 ### Trading app
 ##### IEX 
 Create an accont at [https://iexcloud.io/](https://iexcloud.io/) and get your free token and set it as an environmental variable
@@ -16,6 +16,6 @@ $IEX_TOKEN  -
      - e.g.: PGPASSWORD=password
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYwNTgwMDI3LDI5MTQ0OTU4NCwyMDQwMj
-k3NjIyXX0=
+eyJoaXN0b3J5IjpbLTIxNDU5MDQ3MzYsMjkxNDQ5NTg0LDIwND
+AyOTc2MjJdfQ==
 -->
