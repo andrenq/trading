@@ -2,8 +2,10 @@
 
 
 # Enviromental variables 
-Trading app
-$IEX_TOKEN  - create an accont on [https://iexcloud.io/](https://iexcloud.io/) and get your free token.
+### Trading app
+#### IEX 
+Create an accont at [https://iexcloud.io/](https://iexcloud.io/) and get your free token and set it as an environmental variable
+$IEX_TOKEN  - 
  - e.g.: IEX_TOKEN=pk_44erg7x2ss41490b1lz366klt3214529
  
 #### Database conection
@@ -15,6 +17,6 @@ $PGUSERNAME - database username
 
 $PGPASSWORD
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2ODUwOTE2LDI5MTQ0OTU4NCwyMDQwMj
-k3NjIyXX0=
+eyJoaXN0b3J5IjpbLTkxNjAwMDgzOCwyOTE0NDk1ODQsMjA0MD
+I5NzYyMl19
 -->
