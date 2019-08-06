@@ -69,8 +69,8 @@ Trader controller is used to manage the traders and their accounts. You can crea
 ### Architecture
 -   Data storage is divided into two services, PostgreSql database and IEX REST Api service. 
     - PostgreSql is used to persist all the data on the application and we connect to it using hibernate's JDBC. 
-    - IEX REST Api service gives us real stock market data throw
-- 
+    - IEX REST Api service gives us real stock market data through an Http connection.
+- Controllers are responsible for reciving the requests and forwarding them to the services. T
 ### Future Improvements
  - Auto-update of IEX data.
  - Ability to create short positions.
@@ -81,7 +81,7 @@ Trader controller is used to manage the traders and their accounts. You can crea
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcwMDU3ODUxLDE1OTY5NDE1MTYsMTM3MT
+eyJoaXN0b3J5IjpbNDU1ODM5MDU1LDE1OTY5NDE1MTYsMTM3MT
 c4ODQyMCwxMTcwMjI1ODUzLDEwMTE2NTQ0OTUsMzEwNjg0NzY0
 LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwtMTI2MzA1NzI2MSwtMj
 E0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
