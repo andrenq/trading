@@ -67,7 +67,7 @@ Trader controller is used to manage the traders and their accounts. You can crea
 -   `PUT /trader/deposit/accountId/{accountId}/amount/{amount}`  : Adds funds to an account, based on the accountID. 
 -   `PUT /trader/withdraw/accountId/{accountId}/amount/{amount}`  : Removes funds from an account, based on the accountID. 
 ### Architecture
--   PSQL and IEX
+-   Data storage is divided into two servPSQL and IEX a
 ### Future Improvements
  - Auto-update of IEX data.
  - Ability to create short positions.
@@ -78,8 +78,8 @@ Trader controller is used to manage the traders and their accounts. You can crea
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTczNDM4NzE1LDE1OTY5NDE1MTYsMTM3MT
-c4ODQyMCwxMTcwMjI1ODUzLDEwMTE2NTQ0OTUsMzEwNjg0NzY0
-LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwtMTI2MzA1NzI2MSwtMj
-E0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbLTE2NTc2NjcxOTYsMTU5Njk0MTUxNiwxMz
+cxNzg4NDIwLDExNzAyMjU4NTMsMTAxMTY1NDQ5NSwzMTA2ODQ3
+NjQsLTExMzIwMTg1OSwxNzcwNzQ4ODM2LC0xMjYzMDU3MjYxLC
+0yMTQ1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3NjIyXX0=
 -->
