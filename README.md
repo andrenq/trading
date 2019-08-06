@@ -67,12 +67,16 @@ Trader controller is used to manage the traders and their accounts. You can crea
 -   `PUT /trader/deposit/accountId/{accountId}/amount/{amount}`  : Adds funds to an account, based on the accountID. 
 -   `PUT /trader/withdraw/accountId/{accountId}/amount/{amount}`  : Removes funds from an account, based on the accountID. 
 
-###
+### Improvements
+
+ - Auto update of stocks data
+ - Ability to create short positions
+ - 
 
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0NTk2MzM2MywxMTcwMjI1ODUzLDEwMT
+eyJoaXN0b3J5IjpbMjEzNTUwNDk3MCwxMTcwMjI1ODUzLDEwMT
 E2NTQ0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgz
 NiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQsMj
 A0MDI5NzYyMl19
