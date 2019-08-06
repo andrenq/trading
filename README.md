@@ -32,16 +32,16 @@ $IEX_TOKEN  -
 ## REST API Usage
 
 ### Swagger
-This poject uses Swagger to help build, design 
+This poject uses Swagger to help design, build, document and consume REST APIs. To learn more about Swagger go to [https://swagger.io](https://swagger.io/)  
 ### Quote Controller
-
+Quote controller is responsible for fetching the prices of stocke
 ### Tader Controller
 
 ### App controller
 
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzM3NzgyNzEsLTExMzIwMTg1OSwxNz
-cwNzQ4ODM2LC0xMjYzMDU3MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0
-OTU4NCwyMDQwMjk3NjIyXX0=
+eyJoaXN0b3J5IjpbMTk2NTM2MDM5MCwtMTEzMjAxODU5LDE3Nz
+A3NDg4MzYsLTEyNjMwNTcyNjEsLTIxNDU5MDQ3MzYsMjkxNDQ5
+NTg0LDIwNDAyOTc2MjJdfQ==
 -->
