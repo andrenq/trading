@@ -40,10 +40,12 @@ Quote controller is responsible for fetching the prices of stocks from IEX websi
 ### Tader Controller
 
 ### App controller
-
+App controller returns a message to informe that the app is running.
+#### End Point
+ - `GET /health/` :
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2NjIyMjk5NSwtMTEzMjAxODU5LDE3Nz
+eyJoaXN0b3J5IjpbMTQxNzIxOTM4MiwtMTEzMjAxODU5LDE3Nz
 A3NDg4MzYsLTEyNjMwNTcyNjEsLTIxNDU5MDQ3MzYsMjkxNDQ5
 NTg0LDIwNDAyOTc2MjJdfQ==
 -->
