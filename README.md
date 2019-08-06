@@ -33,15 +33,17 @@ $IEX_TOKEN  -
 
 ### Swagger
 This poject uses Swagger to help design, build, document and consume REST APIs. To learn more about Swagger go to [https://swagger.io](https://swagger.io/)  
+
 ### Quote Controller
-Quote controller is responsible for fetching the prices of stocke
+Quote controller is responsible for fetching the prices of stocks from IEX website, and saving them at the database.
+
 ### Tader Controller
 
 ### App controller
 
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2NTM2MDM5MCwtMTEzMjAxODU5LDE3Nz
+eyJoaXN0b3J5IjpbLTg2NjIyMjk5NSwtMTEzMjAxODU5LDE3Nz
 A3NDg4MzYsLTEyNjMwNTcyNjEsLTIxNDU5MDQ3MzYsMjkxNDQ5
 NTg0LDIwNDAyOTc2MjJdfQ==
 -->
