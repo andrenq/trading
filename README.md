@@ -71,7 +71,8 @@ Trader controller is used to manage the traders and their accounts. You can crea
     - PostgreSql is used to persist all the data on the application and we connect to it using hibernate's JDBC. 
     - IEX REST Api service gives us real stock market data through an Http connection.
 - **Controllers**  are responsible for reciving the requests and forwarding them to the services. They also describe the endpoints.
-- **Services** execute all the requests sent by the controllers. They are resposnible for the business logic 
+- **Services** execute all the requests sent by the controllers. They are resposnible for the business logic, reciving the request, validating it and  executing it by interacting with the Postgres Database and the IEX server.
+- 
 ### Future Improvements
  - Auto-update of IEX data.
  - Ability to create short positions.
@@ -82,8 +83,8 @@ Trader controller is used to manage the traders and their accounts. You can crea
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM4NTE3ODc5LDE1OTY5NDE1MTYsMTM3MT
-c4ODQyMCwxMTcwMjI1ODUzLDEwMTE2NTQ0OTUsMzEwNjg0NzY0
-LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwtMTI2MzA1NzI2MSwtMj
-E0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbLTEyNTQ3NDU3NDIsMTU5Njk0MTUxNiwxMz
+cxNzg4NDIwLDExNzAyMjU4NTMsMTAxMTY1NDQ5NSwzMTA2ODQ3
+NjQsLTExMzIwMTg1OSwxNzcwNzQ4ODM2LC0xMjYzMDU3MjYxLC
+0yMTQ1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3NjIyXX0=
 -->
