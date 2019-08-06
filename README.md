@@ -6,8 +6,8 @@ The stock prices are retrived from IEX trading, and if you wish to replicate thi
 
 ## Quit Start
 ### Prerequisits:
- - Java 8
- - Postgres Database
+ - Java 8 - 
+ - Postgres Database - 
  - IEX account
 
 
@@ -26,6 +26,6 @@ $IEX_TOKEN  -
      - e.g.: PGPASSWORD=password
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyMzIwMzIxLC0xMjYzMDU3MjYxLC0yMT
-Q1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3NjIyXX0=
+eyJoaXN0b3J5IjpbLTQ4NDQ0MTA4NSwtMTI2MzA1NzI2MSwtMj
+E0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
 -->
