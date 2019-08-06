@@ -49,13 +49,21 @@ Quote controller is responsible for fetching stock prices from IEX website, and 
 -   `PUT /quote/iexMarketData`  : Updates the data of all stocks saved in the database.
 
 ### Tader Controller
-This controller is used to manage the traders and their accounts. You can create a new trader with a new account, add or remove funds from the accounts, and  delete a trader. To delete traders, all their positions and acco 
+This controller is used to manage the traders and their accounts. You can create a new trader with a new account, add or remove funds from the accounts, and  delete a trader. To delete traders, all their positions and accounts must be empty.
+
+#### End Points
+-   `DELETE /trader/dailyltraderId/{traderId}`  : Deletes a trader if funds on his account is zero and all positions are also zero.
+-   `POST /trader/`  : Creates a new trader.
+-   `POST trader/firstname/{firstname}/lastname/{lastname}/dob/{dob}/country/{country}/email/{email}`  : Creates a trader
+-   `PUT /trader/deposit/accountId/{accountId}/amount/{amount}`  : Adds funds to a specified account
+-   `PUT /trader/withdraw/accountId/{accountId}/amount/{amount}`  : Removes funds from a specified account 
 
 
  
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQ2ODAzNTc2LDEwMTE2NTQ0OTUsMzEwNj
-g0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwtMTI2MzA1NzI2
-MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbMTgyODQ4MjYwMiwxMDExNjU0NDk1LDMxMD
+Y4NDc2NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcy
+NjEsLTIxNDU5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ
+==
 -->
