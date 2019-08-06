@@ -44,6 +44,10 @@ App controller returns a message to informe that the app is running.
 #### End Points:
  - `GET /portfolio/listall` : List all accounts and open positions of all traders.
  - `GET /portfolio/traderId/{traderId}`: List all accounts and open positions of a given trader.
+### Order Controller
+Order controller submits orders, to buy or to sell stocks. If the order can not be executed, it will be canceled and saved on the database. If it succeeds, all the necessary transfers will be made and the order will be saved as fullfilled.
+#### End Points
+- `POST /order/marketOrder`  : Executes the order
 ### Quote Controller
 Quote controller is responsible for fetching stock prices from IEX website, and saving them at the database
 #### End Points:
@@ -63,14 +67,12 @@ Trader controller is used to manage the traders and their accounts. You can crea
 -   `PUT /trader/deposit/accountId/{accountId}/amount/{amount}`  : Adds funds to an account, based on the accountID. 
 -   `PUT /trader/withdraw/accountId/{accountId}/amount/{amount}`  : Removes funds from an account, based on the accountID. 
 
-### Order Controller
-Order controller submits orders, to buy or to sell stocks. If the order can not be executed, it will be canceled and saved on the database. If it succeeds, all the necessary transfers will be made and the order will be saved as fullfilled.
-#### End Points
-- `POST /order/marketOrder`  : Executes the order
+###
+
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2MTQxNDQ4NCwxMTcwMjI1ODUzLDEwMT
+eyJoaXN0b3J5IjpbMTc0NTk2MzM2MywxMTcwMjI1ODUzLDEwMT
 E2NTQ0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgz
 NiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQsMj
 A0MDI5NzYyMl19
