@@ -1,6 +1,6 @@
 #Trading app REST API
 ##Introduction
-This app 
+This app simulates backend of a 
 
 
 ## Environmental variables 
@@ -18,6 +18,6 @@ $IEX_TOKEN  -
      - e.g.: PGPASSWORD=password
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzc4NzU0MjMsLTEyNjMwNTcyNjEsLTIxND
-U5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ==
+eyJoaXN0b3J5IjpbLTU2NzE2MjM3NiwtMTI2MzA1NzI2MSwtMj
+E0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
 -->
