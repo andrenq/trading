@@ -27,11 +27,19 @@ $IEX_TOKEN  -
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
 - The ext step is to run the app `java -jar target/trading-0.0.1-SNAPSHOT.jar`
 
+## REST API Usage
 
+### Swagger
 
+### Quote Controller
 
+### Tader Controller
+
+### App controller
+
+#
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzYzMzcxOSwxNzcwNzQ4ODM2LC0xMj
+eyJoaXN0b3J5IjpbMTM2MDE0NDM0NCwxNzcwNzQ4ODM2LC0xMj
 YzMDU3MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3
 NjIyXX0=
 -->
