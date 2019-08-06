@@ -1,4 +1,6 @@
-
+#Trading app REST API
+##Introduction
+This app 
 
 
 ## Environmental variables 
@@ -16,6 +18,6 @@ $IEX_TOKEN  -
      - e.g.: PGPASSWORD=password
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjMwNTcyNjEsLTIxNDU5MDQ3MzYsMj
-kxNDQ5NTg0LDIwNDAyOTc2MjJdfQ==
+eyJoaXN0b3J5IjpbMzc4NzU0MjMsLTEyNjMwNTcyNjEsLTIxND
+U5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ==
 -->
