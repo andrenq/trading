@@ -59,12 +59,14 @@ Trader controller is used to manage the traders and their accounts. You can crea
 -   `PUT /trader/withdraw/accountId/{accountId}/amount/{amount}`  : Removes funds from an account, based on the accountID. 
 
 ### Order Controller
-Order controller executes orders, to buy or to sell stocks
+Order controller submits orders, to buy or to sell stocks. If the order can not be executed, it will be canceled and saved on the database.
+#### End Points
+- `POST /order/marketOrder`  : Executes the order
  
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3NDYwNjMwOCwxMDExNjU0NDk1LDMxMD
-Y4NDc2NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcy
-NjEsLTIxNDU5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ
-==
+eyJoaXN0b3J5IjpbLTE3MjMzNDI5NjIsMTAxMTY1NDQ5NSwzMT
+A2ODQ3NjQsLTExMzIwMTg1OSwxNzcwNzQ4ODM2LC0xMjYzMDU3
+MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3NjIyXX
+0=
 -->
