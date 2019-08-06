@@ -32,7 +32,7 @@ $IEX_TOKEN  -
 ## REST API Usage
 
 ### Swagger
-This poject uses 
+This poject uses Swagger to help build, design 
 ### Quote Controller
 
 ### Tader Controller
@@ -41,7 +41,7 @@ This poject uses
 
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0NTA0NjI1LC0xMTMyMDE4NTksMTc3MD
-c0ODgzNiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1
-ODQsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbLTE0MzM3NzgyNzEsLTExMzIwMTg1OSwxNz
+cwNzQ4ODM2LC0xMjYzMDU3MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0
+OTU4NCwyMDQwMjk3NjIyXX0=
 -->
