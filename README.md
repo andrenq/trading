@@ -73,7 +73,7 @@ Trader controller is used to manage the traders and their accounts. You can crea
 - **Controllers**  are responsible for reciving the requests and forwarding them to the services. They also describe the endpoints.
 - **Services** execute all the requests sent by the controllers. They are resposnible for the business logic, reciving the request, validating it and  executing it by interacting with the Postgres Database and the IEX server.
 - **DAOs** - data acces objects are responsible for connecting with the database and IEX to retrive and store information. In this app, hibernate is managing the connection with the database, simplifiing the `DAO` files, reducing the number of lines coded and reducing the chance of error.
-- 
+- **SpringBoot** framework was used in this project. 
 ### Future Improvements
  - Auto-update of IEX data.
  - Ability to create short positions.
@@ -84,8 +84,8 @@ Trader controller is used to manage the traders and their accounts. You can crea
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM0ODM0MTc4LDE1OTY5NDE1MTYsMTM3MT
-c4ODQyMCwxMTcwMjI1ODUzLDEwMTE2NTQ0OTUsMzEwNjg0NzY0
-LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwtMTI2MzA1NzI2MSwtMj
-E0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbMTkwMTg1NTEzNSwxNTk2OTQxNTE2LDEzNz
+E3ODg0MjAsMTE3MDIyNTg1MywxMDExNjU0NDk1LDMxMDY4NDc2
+NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcyNjEsLT
+IxNDU5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ==
 -->
