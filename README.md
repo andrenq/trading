@@ -10,7 +10,7 @@ The stock prices are retrived from IEX trading, and if you wish to replicate thi
  - Postgres Database - on the sql_dll folder, you will find the files to create the database and the necessary tables and views
  - IEX account - create an IEX account, ([https://iextrading.com/](https://iextrading.com/)) and save the public. It will be passed to the app as an environmental variable.
 ### Start App
-- With m
+- With maven installed go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will 
 #### Environmental variables 
 ###### IEX 
 $IEX_TOKEN  - 
@@ -24,7 +24,7 @@ $IEX_TOKEN  -
      - e.g.: PGPASSWORD=password
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5NzYyNzc3MiwxNzcwNzQ4ODM2LC0xMj
-YzMDU3MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3
-NjIyXX0=
+eyJoaXN0b3J5IjpbLTE1MzczMzkwODYsMTc3MDc0ODgzNiwtMT
+I2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5
+NzYyMl19
 -->
