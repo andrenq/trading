@@ -4,7 +4,10 @@ This REST API simulates the backend of a stock brocker. By acessing its endpoint
 It was built using java8, SpringBoot with its standard configuration of Apache  Tomcat, Hibernate and PostgreSQL as database.
 The stock prices are retrived from IEX trading, and if you wish to replicate this project, you will have to create an account on their website ([https://iextrading.com/](https://iextrading.com/))
 
-
+##Quit Start
+###Prerequisits:
+ - Java 8
+ - 
 
 ## Environmental variables 
 ### Trading app
@@ -21,6 +24,6 @@ $IEX_TOKEN  -
      - e.g.: PGPASSWORD=password
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTEyNzQ5OTkzLC0xMjYzMDU3MjYxLC0yMT
-Q1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3NjIyXX0=
+eyJoaXN0b3J5IjpbMTA3NjM0ODE0MSwtMTI2MzA1NzI2MSwtMj
+E0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
 -->
