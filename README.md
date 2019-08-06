@@ -43,7 +43,7 @@ App controller returns a message to informe that the app is running.
 Quote controller is responsible for fetching stock prices from IEX website, and saving them at the database
 #### End Points:
 -   `GET /quote/dailylist`  : Returns the data from all stocks saved on the database.
--   `GET /quote/iex/ticker/{ticker}`  : Returns the data of a single stock from the IEX server
+-   `GET /quote/iex/ticker/{ticker,ticker,...,ticker}`  : Returns the data of all stocks listed from the IEX server.
 -   `POST /quote/tickerId/{tickerId}`  : Retrieves data of a single stock from the IEX server and enters it into the database
 -   `PUT /quote/`  : Updates the data for a given stock
 -   `PUT /quote/iexMarketData`  : Updates the data for all stocks in the database
@@ -55,7 +55,7 @@ Quote controller is responsible for fetching stock prices from IEX website, and 
  
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODc2Njk0MjUsLTExMzIwMTg1OSwxNz
+eyJoaXN0b3J5IjpbLTE0MDk4Mzk1MjcsLTExMzIwMTg1OSwxNz
 cwNzQ4ODM2LC0xMjYzMDU3MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0
 OTU4NCwyMDQwMjk3NjIyXX0=
 -->
