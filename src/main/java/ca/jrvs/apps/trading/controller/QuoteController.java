@@ -89,14 +89,14 @@ public class QuoteController {
     /**
      * Recieves a coma separated string with tickers
      *
-     * @param ticker
+     * @param tickers
      * @return List of IEXQuote objects
      */
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(path = "/iex/ticker/{ticker}")
-    public List<IEXQuote> getQuote(@PathVariable String ticker) {
+    @GetMapping(path = "/iex/ticker/{tickers}")
+    public List<IEXQuote> getQuote(@PathVariable String tickers) {
         try {
-            return marketDataDao.findIexQuoteByTicker(ticker);
+            return marketDataDao.findIexQuoteByTicker(tickers);
         } catch (Exception e) {
             throw e;
         }

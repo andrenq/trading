@@ -33,5 +33,6 @@ public class MarketDataDaoTest {
     public void findIexQuoteByTickerSingleTest() {
         String ticker = "AAPL";
         List<IEXQuote> quote = marketDataDao.findIexQuoteByTicker(ticker);
+        assertNotNull(quote);
     }
 }

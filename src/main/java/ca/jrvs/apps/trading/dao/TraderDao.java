@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TraderDao extends JpaRepository<Trader, Integer> {
     Trader findByid(int id);
-
     void deleteById(int id);
 }
 
