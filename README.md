@@ -1,7 +1,7 @@
 #Trading app REST API
 ##Introduction
 This REST API simulates the backend of a stock brocker. By acessing its endpoints you will be able to access stock prices, register traders, and buy and sell stocks. 
-It was built using Springboot
+It was built using java8, SpringBoot with its standard configuration of Apache  Tomcat, Hibernate 
 
 
 ## Environmental variables 
@@ -19,6 +19,6 @@ $IEX_TOKEN  -
      - e.g.: PGPASSWORD=password
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzE0MjkwODU5LC0xMjYzMDU3MjYxLC0yMT
-Q1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3NjIyXX0=
+eyJoaXN0b3J5IjpbLTQwMjU4ODQ5OSwtMTI2MzA1NzI2MSwtMj
+E0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
 -->
