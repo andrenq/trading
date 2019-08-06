@@ -1,6 +1,6 @@
 #Trading app REST API
 ##Introduction
-This REST API simulates the backend of a stock brocker 
+This REST API simulates the backend of a stock brocker. By acessing its endpoints you will be able to get stock quotes, register traders, buy and sell stocks 
 
 
 ## Environmental variables 
@@ -18,6 +18,6 @@ $IEX_TOKEN  -
      - e.g.: PGPASSWORD=password
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDgwNzYzNTUwLC0xMjYzMDU3MjYxLC0yMT
-Q1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3NjIyXX0=
+eyJoaXN0b3J5IjpbMjA1NzgzNjQxNCwtMTI2MzA1NzI2MSwtMj
+E0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
 -->
