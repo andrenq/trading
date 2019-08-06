@@ -68,6 +68,9 @@ Trader controller is used to manage the traders and their accounts. You can crea
 -   `PUT /trader/withdraw/accountId/{accountId}/amount/{amount}`  : Removes funds from an account, based on the accountID. 
 ### Architecture
 -   Data storage is divided into two services, PostgreSql database and IEX REST Api service. 
+ -- PostgreSql is used to persist all the data on the application 
+ -- IEX REST Api service gives us real stock market data.
+- 
 ### Future Improvements
  - Auto-update of IEX data.
  - Ability to create short positions.
@@ -78,8 +81,8 @@ Trader controller is used to manage the traders and their accounts. You can crea
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcxOTA3MzgyMywxNTk2OTQxNTE2LDEzNz
-E3ODg0MjAsMTE3MDIyNTg1MywxMDExNjU0NDk1LDMxMDY4NDc2
-NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcyNjEsLT
-IxNDU5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ==
+eyJoaXN0b3J5IjpbLTE5OTE2OTQwMzcsMTU5Njk0MTUxNiwxMz
+cxNzg4NDIwLDExNzAyMjU4NTMsMTAxMTY1NDQ5NSwzMTA2ODQ3
+NjQsLTExMzIwMTg1OSwxNzcwNzQ4ODM2LC0xMjYzMDU3MjYxLC
+0yMTQ1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3NjIyXX0=
 -->
