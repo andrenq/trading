@@ -40,6 +40,10 @@ App controller returns a message to informe that the app is running.
 #### End Points:
  - `GET /health/` :  returns the message `I'm alive`.
  - 
+### Dashboard controller
+ 
+ ####End Points:
+ 
 ### Quote Controller
 Quote controller is responsible for fetching stock prices from IEX website, and saving them at the database
 #### End Points:
@@ -64,10 +68,10 @@ Order controller submits orders, to buy or to sell stocks. If the order can not 
 #### End Points
 - `POST /order/marketOrder`  : Executes the order
  
-### Dashboard controller
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5MTczMzI5LDExNzAyMjU4NTMsMTAxMT
-Y1NDQ5NSwzMTA2ODQ3NjQsLTExMzIwMTg1OSwxNzcwNzQ4ODM2
-LC0xMjYzMDU3MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0OTU4NCwyMD
-QwMjk3NjIyXX0=
+eyJoaXN0b3J5IjpbLTIwNzEyNzcyNDcsMTE3MDIyNTg1MywxMD
+ExNjU0NDk1LDMxMDY4NDc2NCwtMTEzMjAxODU5LDE3NzA3NDg4
+MzYsLTEyNjMwNTcyNjEsLTIxNDU5MDQ3MzYsMjkxNDQ5NTg0LD
+IwNDAyOTc2MjJdfQ==
 -->
