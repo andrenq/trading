@@ -8,7 +8,7 @@ The stock prices are retrived from IEX trading, and if you wish to replicate thi
 ### Prerequisits:
  - Java 8 - git clone this project and build it as a maven project
  - Postgres Database - on the sql_dll folder, you will find the files to create the database and the necessary tables and views
- - IEX account - create an IEX account, ([https://iextrading.com/](https://iextrading.com/)) and save the public. It will be passed to the 
+ - IEX account - create an IEX account, ([https://iextrading.com/](https://iextrading.com/)) and save the public. It will be passed to the app as an environmental variable.
 
 
 ## Environmental variables 
@@ -26,6 +26,6 @@ $IEX_TOKEN  -
      - e.g.: PGPASSWORD=password
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzNjk0ODkwMiwtMTI2MzA1NzI2MSwtMj
-E0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbLTExMDYwMjAzMzYsLTEyNjMwNTcyNjEsLT
+IxNDU5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ==
 -->
