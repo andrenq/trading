@@ -45,7 +45,8 @@ App controller returns a message to inform that the app is running.
  - `GET /portfolio/listall` : List all accounts and open positions of all traders.
  - `GET /portfolio/traderId/{traderId}`: List all accounts and open positions of a given trader.
 ### Order Controller
-Order controller submits orders, to buy or to sell stocks. If the order can not be executed, it will be cancelled and saved on the database. If it succeeds, all the necessary transfers will be made, and the order will be saved as fulfilled.
+Order controller submits orders, to buy or to sell stocks. If the order can not be executed, its status will be changed to `CANCELLED` and saved on the database. If it succeeds, all the necessary transfers will be made, and the order will be saved with the status `FILLED`.
+
 #### End Points
 - `POST /order/marketOrder`  : Executes the order
 ### Quote Controller
@@ -85,9 +86,9 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTIzMzU2NTMsMTE5MzcyNDY5NCw5Mz
-UzNjkxNzksMTU5Njk0MTUxNiwxMzcxNzg4NDIwLDExNzAyMjU4
-NTMsMTAxMTY1NDQ5NSwzMTA2ODQ3NjQsLTExMzIwMTg1OSwxNz
-cwNzQ4ODM2LC0xMjYzMDU3MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0
-OTU4NCwyMDQwMjk3NjIyXX0=
+eyJoaXN0b3J5IjpbMTYyMDYwMDY2NSwtMTIxMjMzNTY1MywxMT
+kzNzI0Njk0LDkzNTM2OTE3OSwxNTk2OTQxNTE2LDEzNzE3ODg0
+MjAsMTE3MDIyNTg1MywxMDExNjU0NDk1LDMxMDY4NDc2NCwtMT
+EzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcyNjEsLTIxNDU5
+MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ==
 -->
