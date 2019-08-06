@@ -44,7 +44,7 @@ Quote controller is responsible for fetching stock prices from IEX website, and 
 #### End Points:
 -   `GET /quote/dailylist`  : Returns the data from all stocks saved on the database.
 -   `GET /quote/iex/ticker/{ticker,ticker,...,ticker}`  : Returns the data of all stocks listed from the IEX server.
--   `POST /quote/tickerId/{tickerId}`  : Returns the data of a single stock from the IEX server and enters it into the database
+-   `POST /quote/tickerId/{ticker,ticker,...,ticker}`  : Returns the data of a single stock from the IEX server and enters it into the database
 -   `PUT /quote/`  : Updates the data for a given stock
 -   `PUT /quote/iexMarketData`  : Updates the data for all stocks in the database
 
@@ -55,7 +55,7 @@ Quote controller is responsible for fetching stock prices from IEX website, and 
  
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MD
-c0ODgzNiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1
-ODQsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbMTAxMTY1NDQ5NSwzMTA2ODQ3NjQsLTExMz
+IwMTg1OSwxNzcwNzQ4ODM2LC0xMjYzMDU3MjYxLC0yMTQ1OTA0
+NzM2LDI5MTQ0OTU4NCwyMDQwMjk3NjIyXX0=
 -->
