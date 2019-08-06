@@ -68,7 +68,7 @@ Trader controller manages the traders and their accounts. You can create a new t
 -   `PUT /trader/deposit/accountId/{accountId}/amount/{amount}`  : Adds funds to an account, based on the accountID. 
 -   `PUT /trader/withdraw/accountId/{accountId}/amount/{amount}`  : Removes funds from an account, based on the accountID. 
 ### Architecture
-![image](https://drive.google.com/uc?export=view&id=1mDlJuVrLw_5-6DVs3Pkm6DjuK4DkKFjp)
+![image](https://drive.google.com/uc?export=view&id=1a2LvTx4cFLhOTxMN0bNlZ-PAAR4dPJbr)
 
 -   **Data storage**  is divided into two services, PostgreSql database and IEX REST Api service. 
     - PostgreSQL is used to persist all the data on the application, and we connect to it using hibernate's JDBC. 
@@ -88,10 +88,10 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1NTkzNTgzNiwxNjIwNjAwNjY1LC0xMj
-EyMzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5MTc5LDE1OTY5NDE1
-MTYsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLDEwMTE2NTQ0OTUsMz
-EwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwtMTI2MzA1
-NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl
-19
+eyJoaXN0b3J5IjpbLTE4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNj
+IwNjAwNjY1LC0xMjEyMzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5
+MTc5LDE1OTY5NDE1MTYsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLD
+EwMTE2NTQ0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0
+ODgzNiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1OD
+QsMjA0MDI5NzYyMl19
 -->
