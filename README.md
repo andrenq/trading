@@ -45,7 +45,8 @@ App controller returns a message to inform that the app is running.
  - `GET /portfolio/listall` : List all accounts and open positions of all traders.
  - `GET /portfolio/traderId/{traderId}`: List all accounts and open positions of a given trader.
 ### Order Controller
-Order controller submits orders, to buy or to sell stocks. If the order can not be executed, it will be cancelled and saved on the database. If it succeeds, all the necessary transfers will be made, and the order will be saved as fulfilled.
+Order controller submits orders, to buy or to sell stocks. If the order can not be executed, its status will be changed to `CANCELLED` and saved on the database. If it succeeds, all the necessary transfers will be made, and the order will be saved with the status `FILLED`.
+
 #### End Points
 - `POST /order/marketOrder`  : Executes the order
 ### Quote Controller
@@ -58,7 +59,7 @@ Quote controller is responsible for fetching stock prices from IEX website and s
 -   `PUT /quote/iexMarketData`  : Updates the data of all stocks saved in the database.
 
 ### Trader Controller
-Trader controller is used to manage the traders and their accounts. You can create a new trader with a new account, add or remove funds from the existing accounts, or  delete a trader. To delete traders, all their positions and accounts must be empty.
+Trader controller manages the traders and their accounts. You can create a new trader with a new account, add or remove funds from the existing accounts, or delete a trader. To delete traders, all their positions and accounts must be empty.
 
 #### End Points
 -   `DELETE /trader/dailyltraderId/{traderId}`  : Deletes a trader if funds on his account is zero and all positions are also zero.
@@ -66,19 +67,31 @@ Trader controller is used to manage the traders and their accounts. You can crea
 -   `POST trader/firstname/{firstname}/lastname/{lastname}/dob/{dob}/country/{country}/email/{email}`  : Creates a new trader.
 -   `PUT /trader/deposit/accountId/{accountId}/amount/{amount}`  : Adds funds to an account, based on the accountID. 
 -   `PUT /trader/withdraw/accountId/{accountId}/amount/{amount}`  : Removes funds from an account, based on the accountID. 
+### Architecture
+![image](https://drive.google.com/uc?export=view&id=1a2LvTx4cFLhOTxMN0bNlZ-PAAR4dPJbr)
+
+-   **Data storage**  is divided into two services, PostgreSql database and IEX REST Api service. 
+    - PostgreSQL is used to persist all the data on the application, and we connect to it using hibernate's JDBC. 
+    - IEX REST Api service gives us real stock market data through an Http connection.
+- **Controllers**  are responsible for receiving the requests and forwarding them to the services. They also describe the endpoints.
+- **Services** execute all the requests sent by the controllers. They are responsible for the business logic, receiving the request, validating it and executing it by interacting with the Postgres Database and the IEX server.
+- **DAOs** - data access objects are responsible for connecting with the database and IEX to retrieve and store information. In this app, hibernate is managing the connection with the database, simplifying the `DAO` files, reducing the number of lines coded and reducing the chance of error.
+- **SpringBoot** framework was used in this project. It allows us to set up a production-ready setup of a Spring project, using **Apache Tomcat** as Java Servlet.
 
 ### Future Improvements
  - Auto-update of IEX data.
  - Ability to create short positions.
  - Use social security number to create unique users.
  - Add the functionality to create more than one account for each trader.
- - 
+ - Add more endpoints to accept `JSON` files for all `PUT` requests.
 
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5Njk0MTUxNiwxMzcxNzg4NDIwLDExNz
-AyMjU4NTMsMTAxMTY1NDQ5NSwzMTA2ODQ3NjQsLTExMzIwMTg1
-OSwxNzcwNzQ4ODM2LC0xMjYzMDU3MjYxLC0yMTQ1OTA0NzM2LD
-I5MTQ0OTU4NCwyMDQwMjk3NjIyXX0=
+eyJoaXN0b3J5IjpbLTE4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNj
+IwNjAwNjY1LC0xMjEyMzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5
+MTc5LDE1OTY5NDE1MTYsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLD
+EwMTE2NTQ0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0
+ODgzNiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1OD
+QsMjA0MDI5NzYyMl19
 -->
