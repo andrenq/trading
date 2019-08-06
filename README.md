@@ -67,11 +67,11 @@ Trader controller is used to manage the traders and their accounts. You can crea
 -   `PUT /trader/deposit/accountId/{accountId}/amount/{amount}`  : Adds funds to an account, based on the accountID. 
 -   `PUT /trader/withdraw/accountId/{accountId}/amount/{amount}`  : Removes funds from an account, based on the accountID. 
 ### Architecture
--   **Data storage** - is divided into two services, PostgreSql database and IEX REST Api service. 
+-   **Data storage**  is divided into two services, PostgreSql database and IEX REST Api service. 
     - PostgreSql is used to persist all the data on the application and we connect to it using hibernate's JDBC. 
     - IEX REST Api service gives us real stock market data through an Http connection.
 - **Controllers**  are responsible for reciving the requests and forwarding them to the services. They also describe the endpoints.
-- 
+- **Services** execute all the requests sent by the controllers. They are resposnible for the business logic 
 ### Future Improvements
  - Auto-update of IEX data.
  - Ability to create short positions.
@@ -82,8 +82,8 @@ Trader controller is used to manage the traders and their accounts. You can crea
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyMzQzNDkwOCwxNTk2OTQxNTE2LDEzNz
-E3ODg0MjAsMTE3MDIyNTg1MywxMDExNjU0NDk1LDMxMDY4NDc2
-NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcyNjEsLT
-IxNDU5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ==
+eyJoaXN0b3J5IjpbMjM4NTE3ODc5LDE1OTY5NDE1MTYsMTM3MT
+c4ODQyMCwxMTcwMjI1ODUzLDEwMTE2NTQ0OTUsMzEwNjg0NzY0
+LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwtMTI2MzA1NzI2MSwtMj
+E0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
 -->
