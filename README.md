@@ -37,7 +37,7 @@ This poject uses Swagger to help design, build, document and consume REST APIs. 
 ### App controller
 App controller returns a message to informe that the app is running.
 #### End Points:
- - `GET /health/`
+ - `GET /health/` :  returns the message "I'm alive" .
  - 
 ### Quote Controller
 Quote controller is responsible for fetching stock prices from IEX website, and saving them at the database
@@ -45,8 +45,8 @@ Quote controller is responsible for fetching stock prices from IEX website, and 
 -   `GET /quote/dailylist`  : Returns the data from all stocks saved on the database.
 -   `GET /quote/iex/ticker/{ticker,ticker,...,ticker}`  : Returns the data of all stocks listed from the IEX server (coma separated list of tickers).
 -   `POST /quote/tickerId/{ticker,ticker,...,ticker}`  :  Returns the data of all stocks listed from the IEX server (coma separated list of tickers), and saves it into the database
--   `PUT /quote/`  : ManuallUpdates the data for a given stock
--   `PUT /quote/iexMarketData`  : Updates the data for all stocks in the database
+-   `PUT /quote/`  : Manually updates the data of one stock.
+-   `PUT /quote/iexMarketData`  : Updates the data of all stocks saved in the database.
 
 ### Tader Controller
 
@@ -55,7 +55,8 @@ Quote controller is responsible for fetching stock prices from IEX website, and 
  
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5NDQ1MDc4LDEwMTE2NTQ0OTUsMzEwNj
-g0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwtMTI2MzA1NzI2
-MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbMTMzOTcwOTAyOSwxMDExNjU0NDk1LDMxMD
+Y4NDc2NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcy
+NjEsLTIxNDU5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ
+==
 -->
