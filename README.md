@@ -10,6 +10,7 @@ The stock prices are retrived from IEX trading, and if you wish to replicate thi
  - Postgres Database - on the sql_dll folder, you will find the files to create the database and the necessary tables and views
  - IEX account - create an IEX account, ([https://iextrading.com/](https://iextrading.com/)) and save the public. It will be passed to the app as an environmental variable.
 ### Start App
+- With m
 #### Environmental variables 
 ###### IEX 
 $IEX_TOKEN  - 
@@ -23,6 +24,7 @@ $IEX_TOKEN  -
      - e.g.: PGPASSWORD=password
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3MDc0ODgzNiwtMTI2MzA1NzI2MSwtMj
-E0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbMTg5NzYyNzc3MiwxNzcwNzQ4ODM2LC0xMj
+YzMDU3MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3
+NjIyXX0=
 -->
