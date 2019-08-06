@@ -51,4 +51,14 @@ public class Position {
     public void setPosition(int position) {
         this.position = position;
     }
+
+    @Override
+    public String toString() {
+        return "Position{" +
+                "rowID=" + rowID +
+                ", accountID=" + accountID +
+                ", ticker='" + ticker + '\'' +
+                ", position=" + position +
+                '}';
+    }
 }

@@ -1,14 +1,11 @@
 package ca.jrvs.apps.trading.controller;
 
 
-import ca.jrvs.apps.trading.dao.PositionDao;
 import ca.jrvs.apps.trading.model.domain.Trader;
 import ca.jrvs.apps.trading.service.DashboardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,21 +13,20 @@ import java.util.List;
 @RestController
 @RequestMapping("/portfolio")
 public class DashboardController {
-
     private DashboardService dashboardService;
-    private PositionDao positionDao;
 
     @Autowired
-    public DashboardController(DashboardService dashboardService, PositionDao positionDao) {
+    public DashboardController(DashboardService dashboardService) {
         this.dashboardService = dashboardService;
-        this.positionDao = positionDao;
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping(path = "/traderId/{traderId}")
     public Trader traderAccountsDetails(@PathVariable int traderId) {
         return dashboardService.traderAccountsDetails(traderId);
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping(path = "/listall")
     public List<Trader> listAllTraders() {
         return dashboardService.listAllTraders();

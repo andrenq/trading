@@ -1,6 +1,5 @@
 package ca.jrvs.apps.trading.controller;
 
-import ca.jrvs.apps.trading.dao.SecurityOrderDao;
 import ca.jrvs.apps.trading.model.domain.SecurityOrder;
 import ca.jrvs.apps.trading.model.dto.MarketOrderDto;
 import ca.jrvs.apps.trading.service.OrderService;
@@ -16,8 +15,6 @@ public class OrderController {
 
     @Autowired
     OrderService orderService;
-    @Autowired
-    private SecurityOrderDao securityOrderDao;
 
     @ResponseStatus(HttpStatus.OK)
     @PostMapping(path = "/marketorder", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})

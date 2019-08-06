@@ -21,7 +21,7 @@ import java.util.List;
 public class QuoteService {
 
     private static final Logger logger = LoggerFactory.getLogger(QuoteController.class);
-    MarketDataDao marketDataDao;
+    private MarketDataDao marketDataDao;
     private QuoteDao quoteDao;
 
     @Autowired

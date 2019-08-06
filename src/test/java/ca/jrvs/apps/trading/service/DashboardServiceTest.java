@@ -6,9 +6,11 @@ import ca.jrvs.apps.trading.model.domain.Position;
 import ca.jrvs.apps.trading.model.domain.Quote;
 import ca.jrvs.apps.trading.model.domain.Trader;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,15 +19,16 @@ import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertNotNull;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
 
+@RunWith(MockitoJUnitRunner.class)
 public class DashboardServiceTest {
 
     @Mock
     static TraderDao traderDao;
 
+    @InjectMocks
     static DashboardService dashboardService;
 
     Trader trader;
@@ -33,12 +36,6 @@ public class DashboardServiceTest {
     List<Position> positions;
     Quote quote;
 
-
-    @BeforeClass
-    public static void setUp() {
-        traderDao = mock(TraderDao.class);
-        dashboardService = new DashboardService(traderDao);
-    }
 
     @Before
     public void before() throws ParseException {
@@ -75,12 +72,16 @@ public class DashboardServiceTest {
     }
 
     @Test
-    public void traderAccountsDetails() {
-        when(traderDao.findByid(any())).thenReturn(trader);
+    public void traderAccountsDetailsTest() {
+        when(traderDao.findByid(anyInt())).thenReturn(trader);
         assertNotNull(dashboardService.traderAccountsDetails(1));
     }
 
     @Test
-    public void listAllTraders() {
+    public void listAllTradersTest() {
+        List<Trader> traders = new ArrayList<>();
+        traders.add(trader);
+        when(traderDao.findAll()).thenReturn(traders);
+        assertNotNull(dashboardService.listAllTraders());
     }
 }
