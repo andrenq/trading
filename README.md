@@ -26,7 +26,7 @@ $IEX_TOKEN  -
 ### Start the App
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
 - The ext step is to run the app `java -jar target/trading-0.0.1-SNAPSHOT.jar`
-- You will be able to interact with the app by accessing its http address: `http://localhost:8080/swagger-ui.html#/` or making direct calls to its endpoints
+- You will be able to interact with the app by accessing its http address: `http://localhost:8080/swagger-ui.html#/` or by making direct calls to its endpoints.
 ![image](https://drive.google.com/uc?export=view&id=1CAvd_H93slk86gjNskusAfslaLDF2BZS)
 
 ## REST API Usage
@@ -41,7 +41,7 @@ This poject uses
 
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5NzI2Mjg4OCwtMTEzMjAxODU5LDE3Nz
-A3NDg4MzYsLTEyNjMwNTcyNjEsLTIxNDU5MDQ3MzYsMjkxNDQ5
-NTg0LDIwNDAyOTc2MjJdfQ==
+eyJoaXN0b3J5IjpbMTg0NTA0NjI1LC0xMTMyMDE4NTksMTc3MD
+c0ODgzNiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1
+ODQsMjA0MDI5NzYyMl19
 -->
