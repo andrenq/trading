@@ -37,7 +37,7 @@ This poject uses Swagger to help design, build, document and consume REST APIs. 
 ### App controller
 App controller returns a message to informe that the app is running.
 #### End Points:
- - `GET /health/` :  returns the message "I'm alive" .
+ - `GET /health/` :  returns the message `I'm alive`.
  - 
 ### Quote Controller
 Quote controller is responsible for fetching stock prices from IEX website, and saving them at the database
@@ -49,13 +49,13 @@ Quote controller is responsible for fetching stock prices from IEX website, and 
 -   `PUT /quote/iexMarketData`  : Updates the data of all stocks saved in the database.
 
 ### Tader Controller
-
+This controller is used to manage the trader and 
 
 
  
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzOTcwOTAyOSwxMDExNjU0NDk1LDMxMD
+eyJoaXN0b3J5IjpbMTUxMTA1NTQwNCwxMDExNjU0NDk1LDMxMD
 Y4NDc2NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcy
 NjEsLTIxNDU5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ
 ==
