@@ -53,8 +53,8 @@ This controller is used to manage the traders and their accounts. You can create
 
 #### End Points
 -   `DELETE /trader/dailyltraderId/{traderId}`  : Deletes a trader if funds on his account is zero and all positions are also zero.
--   `POST /trader/`  : Creates a new trader.
--   `POST trader/firstname/{firstname}/lastname/{lastname}/dob/{dob}/country/{country}/email/{email}`  : Creates a trader
+-   `POST /trader/`  : Creates a new trader based on a `JSON` file
+-   `POST trader/firstname/{firstname}/lastname/{lastname}/dob/{dob}/country/{country}/email/{email}`  : Creates a new trader.
 -   `PUT /trader/deposit/accountId/{accountId}/amount/{amount}`  : Adds funds to a specified account
 -   `PUT /trader/withdraw/accountId/{accountId}/amount/{amount}`  : Removes funds from a specified account 
 
@@ -62,7 +62,7 @@ This controller is used to manage the traders and their accounts. You can create
  
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyODQ4MjYwMiwxMDExNjU0NDk1LDMxMD
+eyJoaXN0b3J5IjpbLTIxNzIwMTIxNywxMDExNjU0NDk1LDMxMD
 Y4NDc2NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcy
 NjEsLTIxNDU5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ
 ==
