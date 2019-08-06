@@ -72,13 +72,13 @@ Trader controller is used to manage the traders and their accounts. You can crea
  - Ability to create short positions.
  - Use social security number to create unique users.
  - Add the functionality to create more than one account for each trader.
- - Add endpoints to accept data from `
+ - Add more endpoints to accept `JSON` files for all `PUT` requests.
 
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDgwOTc2MDgsMTU5Njk0MTUxNiwxMz
-cxNzg4NDIwLDExNzAyMjU4NTMsMTAxMTY1NDQ5NSwzMTA2ODQ3
-NjQsLTExMzIwMTg1OSwxNzcwNzQ4ODM2LC0xMjYzMDU3MjYxLC
-0yMTQ1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3NjIyXX0=
+eyJoaXN0b3J5IjpbMTE5OTk0MzYxNywxNTk2OTQxNTE2LDEzNz
+E3ODg0MjAsMTE3MDIyNTg1MywxMDExNjU0NDk1LDMxMDY4NDc2
+NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcyNjEsLT
+IxNDU5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ==
 -->
