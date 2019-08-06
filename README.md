@@ -39,11 +39,11 @@ This poject uses Swagger to help design, build, document and consume REST APIs. 
 App controller returns a message to informe that the app is running.
 #### End Points:
  - `GET /health/` :  returns the message `I'm alive`.
- - 
 ### Dashboard controller
- DashBoard controller list information from traders. Traders' accounts, and op 
+ DashBoard controller list information from traders. Traders' accounts, and open positions.
 #### End Points:
- - `GET /portfolio/listall` : List 
+ - `GET /portfolio/listall` : List all accounts and open positions of all traders.
+ - `GET /portfolio/traderId/{traderId}`: List all accounts and open positions of a given trader.
 ### Quote Controller
 Quote controller is responsible for fetching stock prices from IEX website, and saving them at the database
 #### End Points:
@@ -70,8 +70,8 @@ Order controller submits orders, to buy or to sell stocks. If the order can not 
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQ0NzQxNTEwLDExNzAyMjU4NTMsMTAxMT
-Y1NDQ5NSwzMTA2ODQ3NjQsLTExMzIwMTg1OSwxNzcwNzQ4ODM2
-LC0xMjYzMDU3MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0OTU4NCwyMD
-QwMjk3NjIyXX0=
+eyJoaXN0b3J5IjpbMTY2MTQxNDQ4NCwxMTcwMjI1ODUzLDEwMT
+E2NTQ0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgz
+NiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQsMj
+A0MDI5NzYyMl19
 -->
