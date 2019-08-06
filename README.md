@@ -32,20 +32,31 @@ $IEX_TOKEN  -
 ## REST API Usage
 
 ### Swagger
-This poject uses Swagger to help design, build, document and consume REST APIs. To learn more about Swagger go to [https://swagger.io](https://swagger.io/)  
+This poject uses Swagger to help design, build, document and consume REST APIs. To learn more about Swagger go to [https://swagger.io](https://swagger.io/) 
+
+### App controller
+App controller returns a message to informe that the app is running.
+#### End Points:
+ - `GET /health/`
+ - 
 
 ### Quote Controller
 Quote controller is responsible for fetching the prices of stocks from IEX website, and saving them at the database.
 
+-   `GET /quote/dailylist`  : Outputs all stock data from the local database
+-   `GET /quote/iex/ticker/{ticker}`  : Retrieves data of a single stock from the IEX server
+-   `POST /quote/tickerId/{tickerId}`  : Retrieves data of a single stock from the IEX server and enters it into the database
+-   `PUT /quote/`  : Updates the data for a given stock
+-   `PUT /quote/iexMarketData`  : Updates the data for all stocks in the database
+
 ### Tader Controller
 
-### App controller
-App controller returns a message to informe that the app is running.
-#### End Point
- - `GET /health/` :
+
+
+ 
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxNzIxOTM4MiwtMTEzMjAxODU5LDE3Nz
-A3NDg4MzYsLTEyNjMwNTcyNjEsLTIxNDU5MDQ3MzYsMjkxNDQ5
-NTg0LDIwNDAyOTc2MjJdfQ==
+eyJoaXN0b3J5IjpbMzgxODAxNzA5LC0xMTMyMDE4NTksMTc3MD
+c0ODgzNiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1
+ODQsMjA0MDI5NzYyMl19
 -->
