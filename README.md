@@ -9,7 +9,7 @@ The stock prices are retrived from IEX trading, and if you wish to replicate thi
  - Java 8 - git clone this project and build it as a maven project
  - IEX account - create an IEX account, ([https://iextrading.com/](https://iextrading.com/)) and save the public. It will be passed to the app as an environmental variable.
  - Postgres Database - a working version of postgres sql. On the sql_dll folder, you will find the files to create the database and the necessary tables and views. 
- - ![image](https://drive.google.com/uc?export=view&id=1rfalg0lU3i_7MU3ZZ9VUPTVH_iVATdEd)
+ -- jrvstrading ER diagram: ![image](https://drive.google.com/uc?export=view&id=1rfalg0lU3i_7MU3ZZ9VUPTVH_iVATdEd)
 
 ### Environmental variables 
 Set the folowing env variables:
@@ -66,8 +66,8 @@ Order controller submits orders, to buy or to sell stocks. If the order can not 
  
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4OTM4MjMwNiwxMTcwMjI1ODUzLDEwMT
-E2NTQ0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgz
-NiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQsMj
-A0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbNzcxNDIxMjM5LDExNzAyMjU4NTMsMTAxMT
+Y1NDQ5NSwzMTA2ODQ3NjQsLTExMzIwMTg1OSwxNzcwNzQ4ODM2
+LC0xMjYzMDU3MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0OTU4NCwyMD
+QwMjk3NjIyXX0=
 -->
