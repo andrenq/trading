@@ -58,7 +58,7 @@ Quote controller is responsible for fetching stock prices from IEX website and s
 -   `PUT /quote/iexMarketData`  : Updates the data of all stocks saved in the database.
 
 ### Trader Controller
-Trader controller is used to manage the traders and their accounts. You can create a new trader with a new account, add or remove funds from the existing accounts, or  delete a trader. To delete traders, all their positions and accounts must be empty.
+Trader controller manages the traders and their accounts. You can create a new trader with a new account, add or remove funds from the existing accounts, or delete a trader. To delete traders, all their positions and accounts must be empty.
 
 #### End Points
 -   `DELETE /trader/dailyltraderId/{traderId}`  : Deletes a trader if funds on his account is zero and all positions are also zero.
@@ -68,12 +68,12 @@ Trader controller is used to manage the traders and their accounts. You can crea
 -   `PUT /trader/withdraw/accountId/{accountId}/amount/{amount}`  : Removes funds from an account, based on the accountID. 
 ### Architecture
 -   **Data storage**  is divided into two services, PostgreSql database and IEX REST Api service. 
-    - PostgreSql is used to persist all the data on the application and we connect to it using hibernate's JDBC. 
+    - PostgreSQL is used to persist all the data on the application, and we connect to it using hibernate's JDBC. 
     - IEX REST Api service gives us real stock market data through an Http connection.
-- **Controllers**  are responsible for reciving the requests and forwarding them to the services. They also describe the endpoints.
-- **Services** execute all the requests sent by the controllers. They are resposnible for the business logic, reciving the request, validating it and  executing it by interacting with the Postgres Database and the IEX server.
-- **DAOs** - data acces objects are responsible for connecting with the database and IEX to retrive and store information. In this app, hibernate is managing the connection with the database, simplifiing the `DAO` files, reducing the number of lines coded and reducing the chance of error.
-- **SpringBoot** framework was used in this project. It allows us to set up a production-ready setup of a Spring project , using **Apache Tomcat** as Java Servlet.
+- **Controllers**  are responsible for receiving the requests and forwarding them to the services. They also describe the endpoints.
+- **Services** execute all the requests sent by the controllers. They are responsible for the business logic, receiving the request, validating it and executing it by interacting with the Postgres Database and the IEX server.
+- **DAOs** - data access objects are responsible for connecting with the database and IEX to retrieve and store information. In this app, hibernate is managing the connection with the database, simplifying the `DAO` files, reducing the number of lines coded and reducing the chance of error.
+- **SpringBoot** framework was used in this project. It allows us to set up a production-ready setup of a Spring project, using **Apache Tomcat** as Java Servlet.
 
 ### Future Improvements
  - Auto-update of IEX data.
@@ -85,9 +85,9 @@ Trader controller is used to manage the traders and their accounts. You can crea
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5MzcyNDY5NCw5MzUzNjkxNzksMTU5Nj
-k0MTUxNiwxMzcxNzg4NDIwLDExNzAyMjU4NTMsMTAxMTY1NDQ5
-NSwzMTA2ODQ3NjQsLTExMzIwMTg1OSwxNzcwNzQ4ODM2LC0xMj
-YzMDU3MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0OTU4NCwyMDQwMjk3
-NjIyXX0=
+eyJoaXN0b3J5IjpbLTEyMTIzMzU2NTMsMTE5MzcyNDY5NCw5Mz
+UzNjkxNzksMTU5Njk0MTUxNiwxMzcxNzg4NDIwLDExNzAyMjU4
+NTMsMTAxMTY1NDQ5NSwzMTA2ODQ3NjQsLTExMzIwMTg1OSwxNz
+cwNzQ4ODM2LC0xMjYzMDU3MjYxLC0yMTQ1OTA0NzM2LDI5MTQ0
+OTU4NCwyMDQwMjk3NjIyXX0=
 -->
