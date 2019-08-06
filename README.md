@@ -49,14 +49,13 @@ Quote controller is responsible for fetching stock prices from IEX website, and 
 -   `PUT /quote/iexMarketData`  : Updates the data of all stocks saved in the database.
 
 ### Tader Controller
-This controller is used to manage the trader and 
+This controller is used to manage the traders and their accounts. You can create a new trader with a new account, add or remove funds from the accounts, and  delete a trader. To delete traders, all their positions and acco 
 
 
  
 ### Dashboard controller
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxMTA1NTQwNCwxMDExNjU0NDk1LDMxMD
-Y4NDc2NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcy
-NjEsLTIxNDU5MDQ3MzYsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ
-==
+eyJoaXN0b3J5IjpbODQ2ODAzNTc2LDEwMTE2NTQ0OTUsMzEwNj
+g0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwtMTI2MzA1NzI2
+MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
 -->
