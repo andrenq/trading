@@ -19,8 +19,10 @@ Set the folowing env variables:
 ##### Database conection
  - $RDS_HOSTNAME - host adress
     - e.g.: RDS_HOSTNAME=localhost
-  - $RDS_HOSTNAME - host adress
-    - e.g.: RDS_HOSTNAME=localhost
+  - $RDS_DB_NAME- database name
+    - e.g.: RDS_DB_NAME=jrvstrading
+  - $RDS_PORT- database port
+    - e.g.: RDS_PORT=5432
   -  $RDS_USERNAME- database username
      - e.g.: RDS_USERNAME=postgres
    - $RDS_PASSWORD - database password
@@ -90,7 +92,7 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTgyMzY3MDAsLTE4MjM0MDQ4ODAsLT
+eyJoaXN0b3J5IjpbLTEyMTAyMTIzNzUsLTE4MjM0MDQ4ODAsLT
 E4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNjIwNjAwNjY1LC0xMjEy
 MzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5MTc5LDE1OTY5NDE1MT
 YsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLDEwMTE2NTQ0OTUsMzEw
