@@ -15,18 +15,18 @@ The stock prices are retrieved from IEX trading, and if you wish to replicate th
 Set the folowing env variables:
 ##### IEX 
 - $IEX_TOKEN  - 
-  - e.g.: IEX_TOKEN=pk_44erg7x2ss41490b1lz366klt3214529
+  - e.g.: export IEX_TOKEN=pk_44erg7x2ss41490b1lz366klt3214529
 ##### Database conection
  - $RDS_HOSTNAME - host adress
-    - e.g.: RDS_HOSTNAME=localhost
+    - e.g.: export RDS_HOSTNAME=localhost
   - $RDS_DB_NAME- database name
-    - e.g.: RDS_DB_NAME=jrvstrading
+    - e.g.: export RDS_DB_NAME=jrvstrading
   - $RDS_PORT- database port
-    - e.g.: RDS_PORT=5432
+    - e.g.: export RDS_PORT=5432
   -  $RDS_USERNAME- database username
-     - e.g.: RDS_USERNAME=postgres
+     - e.g.: export RDS_USERNAME=postgres
    - $RDS_PASSWORD - database password
-     - e.g.: RDS_PASSWORD=password
+     - e.g.: export RDS_PASSWORD=password
      
 ### Start the App
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
@@ -92,11 +92,11 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTAxMjQ4NDUsLTEyMTAyMTIzNzUsLT
-E4MjM0MDQ4ODAsLTE4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNjIw
-NjAwNjY1LC0xMjEyMzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5MT
-c5LDE1OTY5NDE1MTYsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLDEw
-MTE2NTQ0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0OD
-gzNiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQs
-MjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbMTYyMzM2NTAxOSwtMTMxMDEyNDg0NSwtMT
+IxMDIxMjM3NSwtMTgyMzQwNDg4MCwtMTgwMjE0OTQ0MSwtNTU1
+OTM1ODM2LDE2MjA2MDA2NjUsLTEyMTIzMzU2NTMsMTE5MzcyND
+Y5NCw5MzUzNjkxNzksMTU5Njk0MTUxNiwxMzcxNzg4NDIwLDEx
+NzAyMjU4NTMsMTAxMTY1NDQ5NSwzMTA2ODQ3NjQsLTExMzIwMT
+g1OSwxNzcwNzQ4ODM2LC0xMjYzMDU3MjYxLC0yMTQ1OTA0NzM2
+LDI5MTQ0OTU4NF19
 -->
