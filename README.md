@@ -42,7 +42,7 @@ This project uses Swagger to help design, build, document and consume REST APIs.
 ### App controller
 App controller returns a message to inform that the app is running.
 #### End Points:
- - `GET /health/` :  returns the message `I'm alive`.
+ - `GET /health/` :  returns the message: `I'm alive`+ `hostname`.
 ### Dashboard controller
  DashBoard controller list information from traders. Traders' accounts and open positions.
 #### End Points:
@@ -92,11 +92,11 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTAyMTIzNzUsLTE4MjM0MDQ4ODAsLT
-E4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNjIwNjAwNjY1LC0xMjEy
-MzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5MTc5LDE1OTY5NDE1MT
-YsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLDEwMTE2NTQ0OTUsMzEw
-Njg0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwtMTI2MzA1Nz
-I2MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
-
+eyJoaXN0b3J5IjpbLTEzMTAxMjQ4NDUsLTEyMTAyMTIzNzUsLT
+E4MjM0MDQ4ODAsLTE4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNjIw
+NjAwNjY1LC0xMjEyMzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5MT
+c5LDE1OTY5NDE1MTYsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLDEw
+MTE2NTQ0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0OD
+gzNiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQs
+MjA0MDI5NzYyMl19
 -->
