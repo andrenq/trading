@@ -17,9 +17,9 @@ Set the folowing env variables:
 - $IEX_TOKEN  - 
   - e.g.: IEX_TOKEN=pk_44erg7x2ss41490b1lz366klt3214529
 ##### Database conection
- - $PGURL - database connection URL
-    - e.g.:PGURL=jdbc:postgresql://localhost:5432/jrvstrading 
-    - $RDS_HOSTNAME - host adress
+ - $RDS_HOSTNAME - host adress
+    - e.g.: RDS_HOSTNAME=localhost
+  - $RDS_HOSTNAME - host adress
     - e.g.: RDS_HOSTNAME=localhost
   -  $RDS_USERNAME- database username
      - e.g.: RDS_USERNAME=postgres
@@ -90,10 +90,11 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjM0MDQ4ODAsLTE4MDIxNDk0NDEsLT
-U1NTkzNTgzNiwxNjIwNjAwNjY1LC0xMjEyMzM1NjUzLDExOTM3
-MjQ2OTQsOTM1MzY5MTc5LDE1OTY5NDE1MTYsMTM3MTc4ODQyMC
-wxMTcwMjI1ODUzLDEwMTE2NTQ0OTUsMzEwNjg0NzY0LC0xMTMy
-MDE4NTksMTc3MDc0ODgzNiwtMTI2MzA1NzI2MSwtMjE0NTkwND
-czNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbLTE3MTgyMzY3MDAsLTE4MjM0MDQ4ODAsLT
+E4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNjIwNjAwNjY1LC0xMjEy
+MzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5MTc5LDE1OTY5NDE1MT
+YsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLDEwMTE2NTQ0OTUsMzEw
+Njg0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwtMTI2MzA1Nz
+I2MSwtMjE0NTkwNDczNiwyOTE0NDk1ODQsMjA0MDI5NzYyMl19
+
 -->
