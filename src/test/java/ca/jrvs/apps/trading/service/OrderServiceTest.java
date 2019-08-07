@@ -101,5 +101,5 @@ public class OrderServiceTest {
         assertEquals(OrderStatus.PENDING, orderService.checkSecurityOrder(orderService.createMarketOrderDTO(marketOrderDto)).
                 getSecurityOrder().getStatus());
     }
-    
+
 }
