@@ -19,10 +19,11 @@ Set the folowing env variables:
 ##### Database conection
  - $PGURL - database connection URL
     - e.g.:PGURL=jdbc:postgresql://localhost:5432/jrvstrading 
-  -  $PGUSERNAME - database username
-     - e.g.: PGUSERNAME=postgres
-   - $PGPASSWORD  - database password
-     - e.g.: PGPASSWORD=password
+    - RDS_HOSTNAME=localhost
+  -  $RDS_USERNAME- database username
+     - e.g.: RDS_USERNAME=postgres
+   - $RDS_PASSWORD - database password
+     - e.g.: RDS_PASSWORD=password
      
 ### Start the App
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
@@ -88,10 +89,10 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNj
-IwNjAwNjY1LC0xMjEyMzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5
-MTc5LDE1OTY5NDE1MTYsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLD
-EwMTE2NTQ0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0
-ODgzNiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1OD
-QsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbMjUyOTQ2MjExLC0xODAyMTQ5NDQxLC01NT
+U5MzU4MzYsMTYyMDYwMDY2NSwtMTIxMjMzNTY1MywxMTkzNzI0
+Njk0LDkzNTM2OTE3OSwxNTk2OTQxNTE2LDEzNzE3ODg0MjAsMT
+E3MDIyNTg1MywxMDExNjU0NDk1LDMxMDY4NDc2NCwtMTEzMjAx
+ODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcyNjEsLTIxNDU5MDQ3Mz
+YsMjkxNDQ5NTg0LDIwNDAyOTc2MjJdfQ==
 -->
