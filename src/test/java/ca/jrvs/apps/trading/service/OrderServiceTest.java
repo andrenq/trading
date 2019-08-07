@@ -1,6 +1,9 @@
 package ca.jrvs.apps.trading.service;
 
-import ca.jrvs.apps.trading.dao.*;
+import ca.jrvs.apps.trading.dao.AccountDao;
+import ca.jrvs.apps.trading.dao.QuoteDao;
+import ca.jrvs.apps.trading.dao.SecurityOrderDao;
+import ca.jrvs.apps.trading.dao.TraderDao;
 import ca.jrvs.apps.trading.model.domain.*;
 import ca.jrvs.apps.trading.model.dto.MarketOrderDto;
 import org.junit.Before;
@@ -38,10 +41,6 @@ public class OrderServiceTest {
     private QuoteDao quoteDao;
     @Mock
     private AccountDao accountDao;
-    @Mock
-    private PositionDao positionDao;
-    @InjectMocks
-    private FundTransferService fundTransferService;
 
     @Before
     public void before() throws ParseException {
