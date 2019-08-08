@@ -27,19 +27,18 @@ Set the folowing env variables:
      - e.g.: export RDS_USERNAME=postgres
  - $RDS_PASSWORD - database password
      - e.g.: export RDS_PASSWORD=password
- ### Docker
+ ### Start the App - Docker
  The PostgreSQL and trading-app images are avaliable on docker hub:
  [andrenq / java_apps](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/java_apps):
  - trading_app
  - jrvs-psql
  
 To run the app using docker:
- -  Install [docker](https://www.docker.com/) and docker-compose 
+ -  Install [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/)
  - Execute the folloing command on the directory where the `docker-compose.yml` file is located:
    - docker-compose up --build
 
-    
-### Start the App
+### Start the App - Maven
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
 - The next step is to run the app `java -jar target/trading-0.0.1-SNAPSHOT.jar`
 - You will be able to interact with the app by accessing its Http address: `http://localhost:8080/swagger-ui.html#/` or by making direct calls to its endpoints.
@@ -103,11 +102,11 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MjcxNTkyNjEsLTE1Mjk2Mzk4NjgsLT
-IwMzM0MTE2NCwxNjIzMzY1MDE5LC0xMzEwMTI0ODQ1LC0xMjEw
-MjEyMzc1LC0xODIzNDA0ODgwLC0xODAyMTQ5NDQxLC01NTU5Mz
-U4MzYsMTYyMDYwMDY2NSwtMTIxMjMzNTY1MywxMTkzNzI0Njk0
-LDkzNTM2OTE3OSwxNTk2OTQxNTE2LDEzNzE3ODg0MjAsMTE3MD
-IyNTg1MywxMDExNjU0NDk1LDMxMDY4NDc2NCwtMTEzMjAxODU5
-LDE3NzA3NDg4MzZdfQ==
+eyJoaXN0b3J5IjpbMTMwODc3MTU2MCwtMTUyOTYzOTg2OCwtMj
+AzMzQxMTY0LDE2MjMzNjUwMTksLTEzMTAxMjQ4NDUsLTEyMTAy
+MTIzNzUsLTE4MjM0MDQ4ODAsLTE4MDIxNDk0NDEsLTU1NTkzNT
+gzNiwxNjIwNjAwNjY1LC0xMjEyMzM1NjUzLDExOTM3MjQ2OTQs
+OTM1MzY5MTc5LDE1OTY5NDE1MTYsMTM3MTc4ODQyMCwxMTcwMj
+I1ODUzLDEwMTE2NTQ0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTks
+MTc3MDc0ODgzNl19
 -->
