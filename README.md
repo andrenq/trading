@@ -42,6 +42,12 @@ Set the folowing env variables:
  
 To run the app using docker:
  -  Install [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/)
+ - Export all environmental variables:
+   - `export RDS_HOSTNAME=jrvs-psql` Use hostname "jrvs-psql".
+   - `export RDS_DB_NAME=jrvstrading`
+   - `export RDS_PORT=5432`
+   - `export RDS_USERNAME=postgres`
+   - `export RDS_PASSWORD=password`
  - Execute the folloing command on the directory where the `docker-compose.yml` file is located:
    - `docker-compose up --build`
 ## REST API Usage
