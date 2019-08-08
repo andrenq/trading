@@ -34,9 +34,9 @@ Set the folowing env variables:
  - jrvs-psql
  
 To run the app using docker:
- -  Install docker and docker-compose
+ -  Install [docker](https://www.docker.com/) and docker-compose 
  - Execute the folloing command on the directory where the `docker-compose.yml` file is located:
- - 
+   - docker-compose up --build
 
     
 ### Start the App
@@ -103,11 +103,11 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Mjk2Mzk4NjgsLTIwMzM0MTE2NCwxNj
-IzMzY1MDE5LC0xMzEwMTI0ODQ1LC0xMjEwMjEyMzc1LC0xODIz
-NDA0ODgwLC0xODAyMTQ5NDQxLC01NTU5MzU4MzYsMTYyMDYwMD
-Y2NSwtMTIxMjMzNTY1MywxMTkzNzI0Njk0LDkzNTM2OTE3OSwx
-NTk2OTQxNTE2LDEzNzE3ODg0MjAsMTE3MDIyNTg1MywxMDExNj
-U0NDk1LDMxMDY4NDc2NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYs
-LTEyNjMwNTcyNjFdfQ==
+eyJoaXN0b3J5IjpbLTE5MjcxNTkyNjEsLTE1Mjk2Mzk4NjgsLT
+IwMzM0MTE2NCwxNjIzMzY1MDE5LC0xMzEwMTI0ODQ1LC0xMjEw
+MjEyMzc1LC0xODIzNDA0ODgwLC0xODAyMTQ5NDQxLC01NTU5Mz
+U4MzYsMTYyMDYwMDY2NSwtMTIxMjMzNTY1MywxMTkzNzI0Njk0
+LDkzNTM2OTE3OSwxNTk2OTQxNTE2LDEzNzE3ODg0MjAsMTE3MD
+IyNTg1MywxMDExNjU0NDk1LDMxMDY4NDc2NCwtMTEzMjAxODU5
+LDE3NzA3NDg4MzZdfQ==
 -->
