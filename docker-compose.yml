@@ -1,6 +1,7 @@
 version: '3.3'
 services:
   web:
+    restart: always
     image: andrenq/java_apps:trading_app
     container_name: trading-app
     ports:
@@ -17,10 +18,12 @@ services:
     depends_on:
       - db
   db:
+    restart: always
     container_name: jrvs-psql
     image: andrenq/java_apps:jrvs-psql
     volumes:
-      - jrvstrading:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-schema.d/schema.sql
+      - ./init_db.sql:/docker-entrypoint-init_db.d/init_db.sql
     environment:
       - "POSTGRES_PASSWORD=${RDS_PASSWORD}"
       - "POSTGRES_USER=${RDS_USERNAME}"
