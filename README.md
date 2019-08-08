@@ -29,6 +29,7 @@ Set the folowing env variables:
      - e.g.: export RDS_PASSWORD=password
 
 ### Start the App - Maven
+- Use git to clone this repository, `git clone https://github.com/andrenq/trading.git`
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
 - The next step is to run the app `java -jar target/trading-0.0.1-SNAPSHOT.jar`
 - You will be able to interact with the app by accessing its Http address: `http://localhost:8080/swagger-ui.html#/` or by making direct calls to its endpoints.
