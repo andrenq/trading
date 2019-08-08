@@ -35,7 +35,8 @@ Set the folowing env variables:
  
 To run the app using docker:
  -  Install docker and docker-compose
- - Execute the folloing command o
+ - Execute the folloing command on the directory where the `docker-compose.yml` file is located:
+ - 
 
     
 ### Start the App
@@ -102,11 +103,11 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyNzA5NDI1NiwtMjAzMzQxMTY0LDE2Mj
-MzNjUwMTksLTEzMTAxMjQ4NDUsLTEyMTAyMTIzNzUsLTE4MjM0
-MDQ4ODAsLTE4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNjIwNjAwNj
-Y1LC0xMjEyMzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5MTc5LDE1
-OTY5NDE1MTYsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLDEwMTE2NT
-Q0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwt
-MTI2MzA1NzI2MV19
+eyJoaXN0b3J5IjpbLTE1Mjk2Mzk4NjgsLTIwMzM0MTE2NCwxNj
+IzMzY1MDE5LC0xMzEwMTI0ODQ1LC0xMjEwMjEyMzc1LC0xODIz
+NDA0ODgwLC0xODAyMTQ5NDQxLC01NTU5MzU4MzYsMTYyMDYwMD
+Y2NSwtMTIxMjMzNTY1MywxMTkzNzI0Njk0LDkzNTM2OTE3OSwx
+NTk2OTQxNTE2LDEzNzE3ODg0MjAsMTE3MDIyNTg1MywxMDExNj
+U0NDk1LDMxMDY4NDc2NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYs
+LTEyNjMwNTcyNjFdfQ==
 -->
