@@ -34,7 +34,7 @@ Set the folowing env variables:
 - You will be able to interact with the app by accessing its Http address: `http://localhost:8080/swagger-ui.html#/` or by making direct calls to its endpoints.
 ![image](https://drive.google.com/uc?export=view&id=1CAvd_H93slk86gjNskusAfslaLDF2BZS)
  
- ### Start the App - Docker
+ ### Start the App using Docker
  Optionally, this app can be initiatted using docker. The PostgreSQL and trading-app images are avaliable on docker hub:
  [andrenq / java_apps](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/java_apps):
  - trading_app
@@ -43,7 +43,7 @@ Set the folowing env variables:
 To run the app using docker:
  -  Install [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/)
  - Execute the folloing command on the directory where the `docker-compose.yml` file is located:
-   - docker-compose up --build
+   - `docker-compose up --build`
 ## REST API Usage
 
 ### Swagger
