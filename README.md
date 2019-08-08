@@ -28,6 +28,8 @@ Set the folowing env variables:
    - $RDS_PASSWORD - database password
      - e.g.: export RDS_PASSWORD=password
  ### Docker
+ The PostgreSQL and trading-app images are avaliable on docker hub:
+ [andrenq / java_apps](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/java_apps)
  
 ### Start the App
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
@@ -93,11 +95,11 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzM0MTE2NCwxNjIzMzY1MDE5LC0xMz
-EwMTI0ODQ1LC0xMjEwMjEyMzc1LC0xODIzNDA0ODgwLC0xODAy
-MTQ5NDQxLC01NTU5MzU4MzYsMTYyMDYwMDY2NSwtMTIxMjMzNT
-Y1MywxMTkzNzI0Njk0LDkzNTM2OTE3OSwxNTk2OTQxNTE2LDEz
-NzE3ODg0MjAsMTE3MDIyNTg1MywxMDExNjU0NDk1LDMxMDY4ND
-c2NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcyNjEs
-LTIxNDU5MDQ3MzZdfQ==
+eyJoaXN0b3J5IjpbLTEwNTk5OTkyNiwtMjAzMzQxMTY0LDE2Mj
+MzNjUwMTksLTEzMTAxMjQ4NDUsLTEyMTAyMTIzNzUsLTE4MjM0
+MDQ4ODAsLTE4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNjIwNjAwNj
+Y1LC0xMjEyMzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5MTc5LDE1
+OTY5NDE1MTYsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLDEwMTE2NT
+Q0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwt
+MTI2MzA1NzI2MV19
 -->
