@@ -48,6 +48,11 @@ To run the app using docker:
    - `export RDS_PORT=5432`
    - `export RDS_USERNAME=postgres`
    - `export RDS_PASSWORD=password`
+ - Your folder structure should have at least the files below:
+    ├── docker-compose.yml
+    └── sql_ddl
+       ├── init_db.sql
+       └── schema.sql
  - Execute the folloing command on the directory where the `docker-compose.yml` file is located:
    - `docker-compose up --build`
 ## REST API Usage
