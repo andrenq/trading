@@ -84,7 +84,7 @@ Trader controller manages the traders and their accounts. You can create a new t
 ### Architecture
 ![image](https://drive.google.com/uc?export=view&id=1a2LvTx4cFLhOTxMN0bNlZ-PAAR4dPJbr)
 
--   **Data storage**  is divided into two services, PostgreSql database and IEX REST Api service. 
+-   **Data storage**  is divided into two services, PostgreSql database and IEX REST API service. 
     - PostgreSQL is used to persist all the data on the application, and we connect to it using hibernate's JDBC. 
     - IEX REST Api service gives us real stock market data through an Http connection.
 - **Controllers**  are responsible for receiving the requests and forwarding them to the services. They also describe the endpoints.
@@ -102,11 +102,11 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Mjg5MTAxMTgsLTE1Mjk2Mzk4NjgsLT
-IwMzM0MTE2NCwxNjIzMzY1MDE5LC0xMzEwMTI0ODQ1LC0xMjEw
-MjEyMzc1LC0xODIzNDA0ODgwLC0xODAyMTQ5NDQxLC01NTU5Mz
-U4MzYsMTYyMDYwMDY2NSwtMTIxMjMzNTY1MywxMTkzNzI0Njk0
-LDkzNTM2OTE3OSwxNTk2OTQxNTE2LDEzNzE3ODg0MjAsMTE3MD
-IyNTg1MywxMDExNjU0NDk1LDMxMDY4NDc2NCwtMTEzMjAxODU5
-LDE3NzA3NDg4MzZdfQ==
+eyJoaXN0b3J5IjpbLTE4MTgyOTEyMzgsLTE0Mjg5MTAxMTgsLT
+E1Mjk2Mzk4NjgsLTIwMzM0MTE2NCwxNjIzMzY1MDE5LC0xMzEw
+MTI0ODQ1LC0xMjEwMjEyMzc1LC0xODIzNDA0ODgwLC0xODAyMT
+Q5NDQxLC01NTU5MzU4MzYsMTYyMDYwMDY2NSwtMTIxMjMzNTY1
+MywxMTkzNzI0Njk0LDkzNTM2OTE3OSwxNTk2OTQxNTE2LDEzNz
+E3ODg0MjAsMTE3MDIyNTg1MywxMDExNjU0NDk1LDMxMDY4NDc2
+NCwtMTEzMjAxODU5XX0=
 -->
