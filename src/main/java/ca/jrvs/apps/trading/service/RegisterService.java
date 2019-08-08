@@ -15,8 +15,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.sql.Date;
-
 @Transactional
 @Service
 public class RegisterService {
@@ -45,7 +43,7 @@ public class RegisterService {
                     traderDto.getFirst_name().isEmpty() &&
                     traderDto.getLast_name().isEmpty())) {
                 newTrader.setCountry(String.valueOf(traderDto.getCountry()));
-                newTrader.setDob(Date.valueOf(String.valueOf(traderDto.getDob())));
+                newTrader.setDob((traderDto.getDob()));
                 newTrader.setEmail(String.valueOf(traderDto.getEmail()));
                 newTrader.setFirst_name(String.valueOf(traderDto.getFirst_name()));
                 newTrader.setLast_name(String.valueOf(traderDto.getLast_name()));
