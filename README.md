@@ -14,31 +14,60 @@ The stock prices are retrieved from IEX trading, and if you wish to replicate th
 ### Environmental variables 
 Set the folowing env variables:
 ##### IEX 
- 1. $IEX_TOKEN  - 
- 2. e.g.: export IEX_TOKEN=pk_44erg7x2ss41490b1lz366klt3214529
+ - $IEX_TOKEN  - 
+ - e.g.: export IEX_TOKEN=pk_44erg7x2ss41490b1lz366klt3214529
 ##### Database conection
- 3. $RDS_HOSTNAME - host adress
+ - $RDS_HOSTNAME - host adress
     - e.g.: export RDS_HOSTNAME=localhost
- 4. $RDS_DB_NAME- database name
+ - $RDS_DB_NAME- database name
     - e.g.: export RDS_DB_NAME=jrvstrading
- 5. $RDS_PORT- database port
+ - $RDS_PORT- database port
     - e.g.: export RDS_PORT=5432
- 6.  $RDS_USERNAME- database username
+ -  $RDS_USERNAME- database username
      - e.g.: export RDS_USERNAME=postgres
- 7. $RDS_PASSWORD - database password
+ - $RDS_PASSWORD - database password
      - e.g.: export RDS_PASSWORD=password
  ### Docker
  The PostgreSQL and trading-app images are avaliable on docker hub:
  [andrenq / java_apps](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/java_apps):
- 8. trading_app
- 9. jrvs-psql
+ - trading_app
+ - jrvs-psql
  
 To run the app using docker:
- 10.  I
- 11. List item
-
-nstall docker and docker-compose
- - create a 
+ -  Install docker and docker-compose
+ - Create a file named  `docker-compose.yml` and past the commands bellow:
+ `version: '3.3'
+services:
+    web:
+      image: andrenq/java_apps:trading_app
+      container_name: trading-app
+      ports: 
+          - 8080:8080
+      environment:
+          - "RDS_HOSTNAME=${RDS_HOSTNAME}" 
+          - "RDS_DB_NAME=${RDS_DB_NAME}" 
+          - "RDS_PORT=${RDS_PORT}" 
+          - "RDS_USERNAME=${RDS_USERNAME}" 
+          - "RDS_PASSWORD=${RDS_PASSWORD}" 
+          - "IEX_TOKEN=${IEX_TOKEN}" 
+      links:
+          - db
+      depends_on:
+          - db
+    db:
+        container_name: jrvs-psql
+        image: andrenq/java_apps:jrvs-psql
+        volumes:
+            - jrvstrading:/var/lib/postgresql/data
+        environment:
+            - "POSTGRES_PASSWORD=${RDS_PASSWORD}"
+            - "POSTGRES_USER=${RDS_USERNAME}"
+            - "POSTGRES_DB=${RDS_DB_NAME}"
+            - PGDATA=/var/lib/postgresql/data/pgdata
+        ports:
+            - 5432:5432
+volumes:
+    jrvstrading: {}`
 ### Start the App
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
 - The next step is to run the app `java -jar target/trading-0.0.1-SNAPSHOT.jar`
@@ -103,11 +132,11 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA5NTg0NTMxOCwtMjAzMzQxMTY0LDE2Mj
-MzNjUwMTksLTEzMTAxMjQ4NDUsLTEyMTAyMTIzNzUsLTE4MjM0
-MDQ4ODAsLTE4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNjIwNjAwNj
-Y1LC0xMjEyMzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5MTc5LDE1
-OTY5NDE1MTYsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLDEwMTE2NT
-Q0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0ODgzNiwt
-MTI2MzA1NzI2MV19
+eyJoaXN0b3J5IjpbNDE4MzEyMTgzLC0yMDMzNDExNjQsMTYyMz
+M2NTAxOSwtMTMxMDEyNDg0NSwtMTIxMDIxMjM3NSwtMTgyMzQw
+NDg4MCwtMTgwMjE0OTQ0MSwtNTU1OTM1ODM2LDE2MjA2MDA2Nj
+UsLTEyMTIzMzU2NTMsMTE5MzcyNDY5NCw5MzUzNjkxNzksMTU5
+Njk0MTUxNiwxMzcxNzg4NDIwLDExNzAyMjU4NTMsMTAxMTY1ND
+Q5NSwzMTA2ODQ3NjQsLTExMzIwMTg1OSwxNzcwNzQ4ODM2LC0x
+MjYzMDU3MjYxXX0=
 -->
