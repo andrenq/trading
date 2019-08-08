@@ -22,8 +22,8 @@ services:
     container_name: jrvs-psql
     image: andrenq/java_apps:jrvs-psql
     volumes:
-      - ./sql_ddl/init_db.sql:/docker-entrypoint-init_db.d/
-      - ./sql_ddl/schema.sql:/docker-entrypoint-init_db.d/
+      - ./sql_ddl:/docker-entrypoint-init_db.d/init_db.sql
+      - ./sql_ddl:/docker-entrypoint-init_db.d/schema.sql
     environment:
       - "POSTGRES_PASSWORD=${RDS_PASSWORD}"
       - "POSTGRES_USER=${RDS_USERNAME}"
@@ -32,4 +32,4 @@ services:
     ports:
       - 5432:5432
 volumes:
-  sql_ddl: {}
+  sql_ddl:
