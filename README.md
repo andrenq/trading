@@ -15,15 +15,20 @@ The stock prices are retrieved from IEX trading, and if you wish to replicate th
 Set the folowing env variables:
 ##### IEX 
 - $IEX_TOKEN  - 
-  - e.g.: IEX_TOKEN=pk_44erg7x2ss41490b1lz366klt3214529
+  - e.g.: export IEX_TOKEN=pk_44erg7x2ss41490b1lz366klt3214529
 ##### Database conection
- - $PGURL - database connection URL
-    - e.g.:PGURL=jdbc:postgresql://localhost:5432/jrvstrading 
-  -  $PGUSERNAME - database username
-     - e.g.: PGUSERNAME=postgres
-   - $PGPASSWORD  - database password
-     - e.g.: PGPASSWORD=password
-     
+ - $RDS_HOSTNAME - host adress
+    - e.g.: export RDS_HOSTNAME=localhost
+  - $RDS_DB_NAME- database name
+    - e.g.: export RDS_DB_NAME=jrvstrading
+  - $RDS_PORT- database port
+    - e.g.: export RDS_PORT=5432
+  -  $RDS_USERNAME- database username
+     - e.g.: export RDS_USERNAME=postgres
+   - $RDS_PASSWORD - database password
+     - e.g.: export RDS_PASSWORD=password
+ ### Docker
+ 
 ### Start the App
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
 - The next step is to run the app `java -jar target/trading-0.0.1-SNAPSHOT.jar`
@@ -38,7 +43,7 @@ This project uses Swagger to help design, build, document and consume REST APIs.
 ### App controller
 App controller returns a message to inform that the app is running.
 #### End Points:
- - `GET /health/` :  returns the message `I'm alive`.
+ - `GET /health/` :  returns the message: `I'm alive`+ `hostname`.
 ### Dashboard controller
  DashBoard controller list information from traders. Traders' accounts and open positions.
 #### End Points:
@@ -88,10 +93,11 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNj
-IwNjAwNjY1LC0xMjEyMzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5
-MTc5LDE1OTY5NDE1MTYsMTM3MTc4ODQyMCwxMTcwMjI1ODUzLD
-EwMTE2NTQ0OTUsMzEwNjg0NzY0LC0xMTMyMDE4NTksMTc3MDc0
-ODgzNiwtMTI2MzA1NzI2MSwtMjE0NTkwNDczNiwyOTE0NDk1OD
-QsMjA0MDI5NzYyMl19
+eyJoaXN0b3J5IjpbLTIwMzM0MTE2NCwxNjIzMzY1MDE5LC0xMz
+EwMTI0ODQ1LC0xMjEwMjEyMzc1LC0xODIzNDA0ODgwLC0xODAy
+MTQ5NDQxLC01NTU5MzU4MzYsMTYyMDYwMDY2NSwtMTIxMjMzNT
+Y1MywxMTkzNzI0Njk0LDkzNTM2OTE3OSwxNTk2OTQxNTE2LDEz
+NzE3ODg0MjAsMTE3MDIyNTg1MywxMDExNjU0NDk1LDMxMDY4ND
+c2NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcyNjEs
+LTIxNDU5MDQ3MzZdfQ==
 -->
