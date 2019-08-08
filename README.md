@@ -14,27 +14,36 @@ The stock prices are retrieved from IEX trading, and if you wish to replicate th
 ### Environmental variables 
 Set the folowing env variables:
 ##### IEX 
-- $IEX_TOKEN  - 
-  - e.g.: export IEX_TOKEN=pk_44erg7x2ss41490b1lz366klt3214529
+ - $IEX_TOKEN  - 
+ - e.g.: export IEX_TOKEN=pk_44erg7x2ss41490b1lz366klt3214529
 ##### Database conection
  - $RDS_HOSTNAME - host adress
     - e.g.: export RDS_HOSTNAME=localhost
-  - $RDS_DB_NAME- database name
+ - $RDS_DB_NAME- database name
     - e.g.: export RDS_DB_NAME=jrvstrading
-  - $RDS_PORT- database port
+ - $RDS_PORT- database port
     - e.g.: export RDS_PORT=5432
-  -  $RDS_USERNAME- database username
+ -  $RDS_USERNAME- database username
      - e.g.: export RDS_USERNAME=postgres
-   - $RDS_PASSWORD - database password
+ - $RDS_PASSWORD - database password
      - e.g.: export RDS_PASSWORD=password
- ### Docker
- 
-### Start the App
+
+### Start the App - Maven
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
 - The next step is to run the app `java -jar target/trading-0.0.1-SNAPSHOT.jar`
 - You will be able to interact with the app by accessing its Http address: `http://localhost:8080/swagger-ui.html#/` or by making direct calls to its endpoints.
 ![image](https://drive.google.com/uc?export=view&id=1CAvd_H93slk86gjNskusAfslaLDF2BZS)
-
+ 
+ ### Start the App - Docker
+ Optionally, this app can be initiatted using docker. The PostgreSQL and trading-app images are avaliable on docker hub:
+ [andrenq / java_apps](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/java_apps):
+ - trading_app
+ - jrvs-psql
+ 
+To run the app using docker:
+ -  Install [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/)
+ - Execute the folloing command on the directory where the `docker-compose.yml` file is located:
+   - docker-compose up --build
 ## REST API Usage
 
 ### Swagger
@@ -75,7 +84,7 @@ Trader controller manages the traders and their accounts. You can create a new t
 ### Architecture
 ![image](https://drive.google.com/uc?export=view&id=1a2LvTx4cFLhOTxMN0bNlZ-PAAR4dPJbr)
 
--   **Data storage**  is divided into two services, PostgreSql database and IEX REST Api service. 
+-   **Data storage**  is divided into two services, PostgreSql database and IEX REST API service. 
     - PostgreSQL is used to persist all the data on the application, and we connect to it using hibernate's JDBC. 
     - IEX REST Api service gives us real stock market data through an Http connection.
 - **Controllers**  are responsible for receiving the requests and forwarding them to the services. They also describe the endpoints.
@@ -93,11 +102,11 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzM0MTE2NCwxNjIzMzY1MDE5LC0xMz
-EwMTI0ODQ1LC0xMjEwMjEyMzc1LC0xODIzNDA0ODgwLC0xODAy
-MTQ5NDQxLC01NTU5MzU4MzYsMTYyMDYwMDY2NSwtMTIxMjMzNT
-Y1MywxMTkzNzI0Njk0LDkzNTM2OTE3OSwxNTk2OTQxNTE2LDEz
-NzE3ODg0MjAsMTE3MDIyNTg1MywxMDExNjU0NDk1LDMxMDY4ND
-c2NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcyNjEs
-LTIxNDU5MDQ3MzZdfQ==
+eyJoaXN0b3J5IjpbLTE4MTgyOTEyMzgsLTE0Mjg5MTAxMTgsLT
+E1Mjk2Mzk4NjgsLTIwMzM0MTE2NCwxNjIzMzY1MDE5LC0xMzEw
+MTI0ODQ1LC0xMjEwMjEyMzc1LC0xODIzNDA0ODgwLC0xODAyMT
+Q5NDQxLC01NTU5MzU4MzYsMTYyMDYwMDY2NSwtMTIxMjMzNTY1
+MywxMTkzNzI0Njk0LDkzNTM2OTE3OSwxNTk2OTQxNTE2LDEzNz
+E3ODg0MjAsMTE3MDIyNTg1MywxMDExNjU0NDk1LDMxMDY4NDc2
+NCwtMTEzMjAxODU5XX0=
 -->
