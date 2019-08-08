@@ -8,7 +8,7 @@ The stock prices are retrieved from IEX trading, and if you wish to replicate th
 ### Prerequisites:
  - Java 8 - git clone this project and build it as a maven project
  - IEX account - create an IEX account, ([https://iextrading.com/](https://iextrading.com/)) and save the public. It will be passed to the app as an environmental variable.
- - Postgres Database - a working version of Postgres SQL. On the sql_dll folder, you will find the files to create the database and the necessary tables and views. 
+ - Postgres Database - a working version of Postgres SQL. On the sql_ddl folder, you will find the files to create the database and the necessary tables and views. 
  -- Database `jrvstrading` ER diagram: ![image](https://drive.google.com/uc?export=view&id=1rfalg0lU3i_7MU3ZZ9VUPTVH_iVATdEd)
 
 ### Environmental variables 
@@ -33,7 +33,6 @@ Set the folowing env variables:
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
 - The next step is to run the app `java -jar target/trading-0.0.1-SNAPSHOT.jar`
 - You will be able to interact with the app by accessing its Http address: `http://localhost:8080/swagger-ui.html#/` or by making direct calls to its endpoints.
-![image](https://drive.google.com/uc?export=view&id=1CAvd_H93slk86gjNskusAfslaLDF2BZS)
  
  ### Start the App using Docker
  Optionally, this app can be initiatted using docker. The PostgreSQL and trading-app images are avaliable on docker hub:
@@ -44,23 +43,23 @@ Set the folowing env variables:
 To run the app using docker:
  -  Install [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/)
  - Export all environmental variables:
-   - `export RDS_HOSTNAME=jrvs-psql` Use hostname "jrvs-psql".
+   - `export RDS_HOSTNAME=jrvs-psql`.
    - `export RDS_DB_NAME=jrvstrading`
    - `export RDS_PORT=5432`
    - `export RDS_USERNAME=postgres`
    - `export RDS_PASSWORD=password`
- - Your folder structure should have at least the files below:
-    ├── docker-compose.yml
-    └── sql_ddl
-       ├── init_db.sql
-       └── schema.sql
+ - Your folder structure should have at least the files below:\
+    ├── docker-compose.yml\
+    └── sql_ddl\
+    &ensp;&ensp;&ensp;├── init_db.sql\
+    &ensp;&ensp;&ensp;└── schema.sql
  - Execute the folloing command on the directory where the `docker-compose.yml` file is located:
    - `docker-compose up --build`
 ## REST API Usage
 
 ### Swagger
 This project uses Swagger to help design, build, document and consume REST APIs. To learn more about Swagger go to [https://swagger.io](https://swagger.io/) 
-
+![image](https://drive.google.com/uc?export=view&id=1CAvd_H93slk86gjNskusAfslaLDF2BZS)
 ### App controller
 App controller returns a message to inform that the app is running.
 #### End Points:
