@@ -14,22 +14,25 @@ The stock prices are retrieved from IEX trading, and if you wish to replicate th
 ### Environmental variables 
 Set the folowing env variables:
 ##### IEX 
-- $IEX_TOKEN  - 
-  - e.g.: export IEX_TOKEN=pk_44erg7x2ss41490b1lz366klt3214529
+ - $IEX_TOKEN  - 
+ - e.g.: export IEX_TOKEN=pk_44erg7x2ss41490b1lz366klt3214529
 ##### Database conection
  - $RDS_HOSTNAME - host adress
     - e.g.: export RDS_HOSTNAME=localhost
-  - $RDS_DB_NAME- database name
+ - $RDS_DB_NAME- database name
     - e.g.: export RDS_DB_NAME=jrvstrading
-  - $RDS_PORT- database port
+ - $RDS_PORT- database port
     - e.g.: export RDS_PORT=5432
-  -  $RDS_USERNAME- database username
+ -  $RDS_USERNAME- database username
      - e.g.: export RDS_USERNAME=postgres
-   - $RDS_PASSWORD - database password
+ - $RDS_PASSWORD - database password
      - e.g.: export RDS_PASSWORD=password
  ### Docker
  The PostgreSQL and trading-app images are avaliable on docker hub:
- [andrenq / java_apps](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/java_apps)
+ [andrenq / java_apps](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/java_apps):
+ - trading_app
+ - jrvs-psql
+To run the app 
  
 ### Start the App
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
@@ -95,7 +98,7 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTk5OTkyNiwtMjAzMzQxMTY0LDE2Mj
+eyJoaXN0b3J5IjpbLTEzMTMyNzcwNSwtMjAzMzQxMTY0LDE2Mj
 MzNjUwMTksLTEzMTAxMjQ4NDUsLTEyMTAyMTIzNzUsLTE4MjM0
 MDQ4ODAsLTE4MDIxNDk0NDEsLTU1NTkzNTgzNiwxNjIwNjAwNj
 Y1LC0xMjEyMzM1NjUzLDExOTM3MjQ2OTQsOTM1MzY5MTc5LDE1
