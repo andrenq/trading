@@ -27,7 +27,8 @@ Set the folowing env variables:
      - e.g.: export RDS_USERNAME=postgres
    - $RDS_PASSWORD - database password
      - e.g.: export RDS_PASSWORD=password
-     
+ ### Docker
+ 
 ### Start the App
 - With Maven installed, go to the base folder ( where the pom.xml file is located) and execute the command `mvn install`. It will create the jar file.
 - The next step is to run the app `java -jar target/trading-0.0.1-SNAPSHOT.jar`
@@ -92,11 +93,11 @@ Trader controller manages the traders and their accounts. You can create a new t
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyMzM2NTAxOSwtMTMxMDEyNDg0NSwtMT
-IxMDIxMjM3NSwtMTgyMzQwNDg4MCwtMTgwMjE0OTQ0MSwtNTU1
-OTM1ODM2LDE2MjA2MDA2NjUsLTEyMTIzMzU2NTMsMTE5MzcyND
-Y5NCw5MzUzNjkxNzksMTU5Njk0MTUxNiwxMzcxNzg4NDIwLDEx
-NzAyMjU4NTMsMTAxMTY1NDQ5NSwzMTA2ODQ3NjQsLTExMzIwMT
-g1OSwxNzcwNzQ4ODM2LC0xMjYzMDU3MjYxLC0yMTQ1OTA0NzM2
-LDI5MTQ0OTU4NF19
+eyJoaXN0b3J5IjpbLTIwMzM0MTE2NCwxNjIzMzY1MDE5LC0xMz
+EwMTI0ODQ1LC0xMjEwMjEyMzc1LC0xODIzNDA0ODgwLC0xODAy
+MTQ5NDQxLC01NTU5MzU4MzYsMTYyMDYwMDY2NSwtMTIxMjMzNT
+Y1MywxMTkzNzI0Njk0LDkzNTM2OTE3OSwxNTk2OTQxNTE2LDEz
+NzE3ODg0MjAsMTE3MDIyNTg1MywxMDExNjU0NDk1LDMxMDY4ND
+c2NCwtMTEzMjAxODU5LDE3NzA3NDg4MzYsLTEyNjMwNTcyNjEs
+LTIxNDU5MDQ3MzZdfQ==
 -->
