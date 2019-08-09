@@ -9,7 +9,8 @@ The stock prices are retrieved from IEX trading, and if you wish to replicate th
  - Java 8 - git clone this project and build it as a maven project
  - IEX account - create an IEX account, ([https://iextrading.com/](https://iextrading.com/)) and save the public. It will be passed to the app as an environmental variable.
  - Postgres Database - a working version of Postgres SQL. On the sql_ddl folder, you will find the files to create the database and the necessary tables and views. 
- -- Database `jrvstrading` ER diagram: ![image](https://drive.google.com/uc?export=view&id=1rfalg0lU3i_7MU3ZZ9VUPTVH_iVATdEd)
+ -- Database `jrvstrading` ER diagram: 
+ ![image](https://drive.google.com/uc?export=view&id=1OaJDZsFesA81V4KtjLWcMc9q_b2qOT4C)
 
 ### Environmental variables 
 Set the folowing env variables:
