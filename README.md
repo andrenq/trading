@@ -106,7 +106,7 @@ Trader controller manages the traders and their accounts. You can create a new t
  - Use social security number to create unique users.
  - Add the functionality to create more than one account for each trader.
  - Add more endpoints to accept `JSON` files for all `PUT` requests.
-
+ - Add the column `created_at` to the `security_order` table 
  
 
 <!--stackedit_data:
