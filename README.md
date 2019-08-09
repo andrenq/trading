@@ -36,10 +36,8 @@ Set the folowing env variables:
  
  ### Start the App using Docker
  Optionally, this app can be initiatted using docker. The PostgreSQL and trading-app images are avaliable on docker hub:
- [andrenq / java_apps](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/java_apps):
- - trading_app
- -[andrenq / jrvs-psql](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/jrvs-psql)
-
+ - [andrenq/java_apps:trading_app](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/java_apps) 
+ - [andrenq/jrvs-psql](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/jrvs-psql)
  
 To run the app using docker:
  -  Install [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/)
