@@ -50,7 +50,7 @@ To run the app using docker:
    - `export IEX_TOKEN=YUR_IEX_TOKEN`
  - Download the docker docker-compose.yml `wget https://raw.githubusercontent.com/andrenq/trading/master/docker-compose.yml`
  - Execute the folloing command on the directory where the `docker-compose.yml` file is located:
-   - `docker-compose up --build`
+   - `docker-compose up -d`
 ## REST API Usage
 
 ### Swagger
