@@ -20,9 +20,8 @@ services:
   db:
     restart: always
     container_name: jrvs-psql
-    image: andrenq/java_apps:jrvs-psql
+    image: andrenq/jrvs-psql
     volumes:
-      - ./sql_ddl:/docker-entrypoint-init_db.d/init_db.sql
       - ./sql_ddl:/docker-entrypoint-init_db.d/schema.sql
     environment:
       - "POSTGRES_PASSWORD=${RDS_PASSWORD}"

@@ -74,13 +74,16 @@ AS
 
 CREATE SEQUENCE hibernate_sequence START 1;
 
-
--- Demo DATA
+INSERT INTO public.trader (first_name,last_name,dob,country,email) VALUES
+('Walt','Disney','1901-12-01','USA',' walt@disney.com')
+,('Hugh','Hefner','1926-04-09','USA','hh@playboy.com')
+,('Stringer','Strong','1981-01-09','CA','string@stringo.com')
+;
 INSERT INTO public.account (trader_id,amount) VALUES
 (1,9999941792)
 ,(2,9999979628)
-,(3,9999915578)
-;
+,(3,9999915578);
+
 INSERT INTO public.quote (ticker,last_price,bid_price,bid_size,ask_price,ask_size,created_at) VALUES
 ('GOLD',18.075,18.08,200,18.15,100,'2019-08-08 13:17:39.529')
 ,('RBC',74.375,0,0,74.42,100,'2019-08-08 13:17:39.529')
@@ -111,8 +114,4 @@ INSERT INTO public.security_order (account_id,status,ticker,"size",price,notes) 
 ;
 
 
-INSERT INTO public.trader (first_name,last_name,dob,country,email) VALUES
-('Walt','Disney','1901-12-01','USA',' walt@disney.com')
-,('Hugh','Hefner','1926-04-09','USA','hh@playboy.com')
-,('Stringer','Strong','1981-01-09','CA','string@stringo.com')
-;
+
