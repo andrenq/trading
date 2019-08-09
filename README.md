@@ -38,21 +38,19 @@ Set the folowing env variables:
  Optionally, this app can be initiatted using docker. The PostgreSQL and trading-app images are avaliable on docker hub:
  [andrenq / java_apps](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/java_apps):
  - trading_app
- - jrvs-psql
+ -[andrenq / jrvs-psql](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/jrvs-psql)
+
  
 To run the app using docker:
  -  Install [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/)
  - Export all environmental variables:
-   - `export RDS_HOSTNAME=jrvs-psql`.
+   - `export RDS_HOSTNAME=jrvs-psql`
    - `export RDS_DB_NAME=jrvstrading`
    - `export RDS_PORT=5432`
    - `export RDS_USERNAME=postgres`
    - `export RDS_PASSWORD=password`
- - Your folder structure should have at least the files below:\
-    ├── docker-compose.yml\
-    └── sql_ddl\
-    &ensp;&ensp;&ensp;├── init_db.sql\
-    &ensp;&ensp;&ensp;└── schema.sql
+   - `export IEX_TOKEN=YUR_IEX_TOKEN`
+ - Download the docker docker-compose.yml `wget https://raw.githubusercontent.com/andrenq/trading/master/docker-compose.yml`
  - Execute the folloing command on the directory where the `docker-compose.yml` file is located:
    - `docker-compose up --build`
 ## REST API Usage
