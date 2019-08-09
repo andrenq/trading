@@ -74,8 +74,6 @@ AS
 
 CREATE SEQUENCE hibernate_sequence START 1;
 
-
--- Demo DATA
 INSERT INTO public.account (trader_id,amount) VALUES
 (1,9999941792)
 ,(2,9999979628)
