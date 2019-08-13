@@ -9,7 +9,8 @@ The stock prices are retrieved from IEX trading, and if you wish to replicate th
  - Java 8 - git clone this project and build it as a maven project
  - IEX account - create an IEX account, ([https://iextrading.com/](https://iextrading.com/)) and save the public. It will be passed to the app as an environmental variable.
  - Postgres Database - a working version of Postgres SQL. On the sql_ddl folder, you will find the files to create the database and the necessary tables and views. 
- -- Database `jrvstrading` ER diagram: ![image](https://drive.google.com/uc?export=view&id=1rfalg0lU3i_7MU3ZZ9VUPTVH_iVATdEd)
+ -- Database `jrvstrading` ER diagram: 
+ ![image](https://drive.google.com/uc?export=view&id=1OaJDZsFesA81V4KtjLWcMc9q_b2qOT4C)
 
 ### Environmental variables 
 Set the folowing env variables:
@@ -36,25 +37,21 @@ Set the folowing env variables:
  
  ### Start the App using Docker
  Optionally, this app can be initiatted using docker. The PostgreSQL and trading-app images are avaliable on docker hub:
- [andrenq / java_apps](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/java_apps):
- - trading_app
- - jrvs-psql
+ - [andrenq/java_apps:trading_app](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/java_apps) 
+ - [andrenq/jrvs-psql](https://cloud.docker.com/repository/registry-1.docker.io/andrenq/jrvs-psql)
  
 To run the app using docker:
  -  Install [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/)
  - Export all environmental variables:
-   - `export RDS_HOSTNAME=jrvs-psql`.
+   - `export RDS_HOSTNAME=jrvs-psql`
    - `export RDS_DB_NAME=jrvstrading`
    - `export RDS_PORT=5432`
    - `export RDS_USERNAME=postgres`
    - `export RDS_PASSWORD=password`
- - Your folder structure should have at least the files below:\
-    ├── docker-compose.yml\
-    └── sql_ddl\
-    &ensp;&ensp;&ensp;├── init_db.sql\
-    &ensp;&ensp;&ensp;└── schema.sql
+   - `export IEX_TOKEN=YUR_IEX_TOKEN`
+ - Download the docker docker-compose.yml `wget https://raw.githubusercontent.com/andrenq/trading/master/docker-compose.yml`
  - Execute the folloing command on the directory where the `docker-compose.yml` file is located:
-   - `docker-compose up --build`
+   - `docker-compose up -d`
 ## REST API Usage
 
 ### Swagger
@@ -109,7 +106,7 @@ Trader controller manages the traders and their accounts. You can create a new t
  - Use social security number to create unique users.
  - Add the functionality to create more than one account for each trader.
  - Add more endpoints to accept `JSON` files for all `PUT` requests.
-
+ - Add the column `created_at` to the `security_order` table 
  
 
 <!--stackedit_data:
