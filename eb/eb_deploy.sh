@@ -23,7 +23,7 @@ deploy:
   artifact: target/trading-1.0-SNAPSHOT-elastic-beanstalk.zip
 _EOF
 
-#deploy
+#deploy3
 eb deploy
 
 exit 0
