@@ -2,11 +2,11 @@ pipeline {
     agent any
     tools {
         maven "M3"
+        jdk "java8"
     }
 
     environment {
-        app_name = 'trading_app'
-
+        app_name = 'TradingApp-prod'
     }
 
     stages {
@@ -18,17 +18,17 @@ pipeline {
             }
         }
         stage('Deploy_dev') {
-            when { branch 'development' }
+            when { branch 'develop' }
             steps {
                 echo "Current Branch is: ${env.GIT_BRANCH}"
-                sh "bash ./eb/eb_deploy.sh TradingApp-dev"
+                sh "bash ./scripts/eb_deploy.sh trading-app TradingApp-env"
             }
         }
         stage('Deploy_prod') {
             when { branch 'master' }
             steps {
                 echo "Current Branch is: ${env.GIT_BRANCH}"
-                sh "./eb/eb_deploy.sh TradingApp-prod"
+                sh "bash ./scripts/eb_deploy.sh TradingApp-prod TradingappProd-env"
             }
         }
     }
