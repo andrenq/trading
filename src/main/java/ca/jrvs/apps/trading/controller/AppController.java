@@ -17,7 +17,7 @@ public class AppController {
     @GetMapping
     public String appController() throws UnknownHostException {
         String host = (InetAddress.getLocalHost().getHostName());
-        return "I'm alive! \n" + host;
+        return "I'm alive! \n" + host + " " + InetAddress.getLocalHost();
     }
 
 }
