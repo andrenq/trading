@@ -12,8 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn c
-                ean package -DskipTests'
+                sh 'mvn clean package -DskipTests'
                 echo "app_name is ${env.app_name} "
                 archiveArtifacts 'target/*zip'
             }
