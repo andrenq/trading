@@ -31,7 +31,6 @@ public class QuoteController {
     /**
      * Updates quotes (from IEX API) for all tickers on the database
      *
-     * @return
      */
     @ResponseStatus(HttpStatus.OK)
     @PostMapping(path = "/iexMarketData")

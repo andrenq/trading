@@ -61,17 +61,21 @@ public class RegisterService {
     }
 
     public Account createAccount(Trader trader) {
-        Account account = new Account();
-        account.setTraderId(trader.getId());
-        account.setAmount(0);
-        return accountDao.save(account);
+        try {
+            Account account = new Account();
+            account.setTraderId(trader.getId());
+            account.setAmount(0);
+            return accountDao.save(account);
+        } catch (Exception e) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT, "Account number already exists, keep trying until a valid account number " +
+                    "is generated.");
+        }
     }
 
     /**
-     * DELETE
+     * DELETE trader
      * Delete -------------
-     *
-     * @param
      */
 
     public void deleteTrader(int traderid) {

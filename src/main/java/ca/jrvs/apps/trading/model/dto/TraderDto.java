@@ -21,6 +21,34 @@ public class TraderDto {
         this.email = email;
     }
 
+    /*
+     * Test of Fluent entities
+     */
+    public TraderDto firstName(String first_name) {
+        this.first_name = first_name;
+        return this;
+    }
+
+    public TraderDto lastName(String last_name) {
+        this.last_name = last_name;
+        return this;
+    }
+
+    public TraderDto dateOfBirth(Date dob) {
+        this.dob = dob;
+        return this;
+    }
+
+    public TraderDto country(String country) {
+        this.country = country;
+        return this;
+    }
+
+    public TraderDto email(String email) {
+        this.email = email;
+        return this;
+    }
+
     public String getFirst_name() {
         return first_name;
     }

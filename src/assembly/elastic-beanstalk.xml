@@ -1,0 +1,16 @@
+<assembly>
+    <id>elastic-beanstalk</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <directory>target</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>trading-0.0.1-SNAPSHOT.jar</include>
+            </includes>
+        </fileSet>
+
+    </fileSets>
+</assembly>

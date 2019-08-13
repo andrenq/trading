@@ -44,13 +44,14 @@ public class TraderController {
     public Trader createTrader(@PathVariable String firstname, @PathVariable String lastname,
                                @PathVariable String dob, @PathVariable String country,
                                @PathVariable String email) {
-        TraderDto trader = new TraderDto();
+
         try {
-            trader.setFirst_name(firstname);
-            trader.setLast_name(lastname);
-            trader.setDob(Date.valueOf(dob));
-            trader.setCountry(country);
-            trader.setEmail(email);
+            TraderDto trader = new TraderDto()
+                    .firstName(firstname)
+                    .lastName(lastname)
+                    .dateOfBirth(Date.valueOf(dob))
+                    .country(country)
+                    .email(email);
             return registerService.createTrader(trader);
         } catch (IllegalArgumentException e) {
             throw new ResponseStatusException(
